@@ -25,7 +25,7 @@ export const customTheme = deepMerge(grommet, {
   global: {
     colors: {
       icon: 'text',
-      brand: 'green!',
+      brand: 'blue!',
       background: {
         dark: '#1A1F2B',
         light: '#FFFFFF',
@@ -76,7 +76,7 @@ export const customTheme = deepMerge(grommet, {
         dark: '#0E5265',
         light: '#00C8FF',
       },
-      'blue!': '#00739D',
+      'blue!': '#3e5170',
       green: {
         dark: '#007A5E',
         light: '#6FFFB0',

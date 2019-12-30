@@ -11,7 +11,7 @@ export default () => (
       href="https://fanlink.to/postcardboy"
       target="_blank"
     />
-    <Anchor label="archive" size="medium" />
+    <Anchor label="archive" size="medium" href="archive" />
     <Anchor label="postcard boy" size="large" href="/" />
     <Anchor label="theatre" size="medium" />
     <Anchor label="contact" size="medium" href="/contact" />

@@ -21,11 +21,7 @@ class Template extends React.Component {
           <Stack>
             <Box height="100vh" overflow="auto">
               <Video controls={false} fit="cover" autoPlay loop>
-                <source
-                  key="video"
-                  src="/assets/postweb.mp4"
-                  type="video/mp4"
-                />
+                <source key="video" src="/postweb.mp4" type="video/mp4" />
               </Video>
             </Box>
             <Box fill justify="between">
