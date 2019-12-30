@@ -1,12 +1,13 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import base from './base.css'
-import Container from './container'
+import { Box, Grommet, Stack, Video } from 'grommet'
 import Navigation from './navigation'
+import { Footer } from './Footer'
+import { customTheme } from '../theme'
 
 class Template extends React.Component {
   render() {
-    const { location, children } = this.props
+    const { location, children, isLanding } = this.props
     let header
 
     let rootPath = `/`
@@ -15,10 +16,29 @@ class Template extends React.Component {
     }
 
     return (
-      <Container>
-        <Navigation />
-        {children}
-      </Container>
+      <Grommet theme={customTheme} full>
+        {isLanding ? (
+          <Stack>
+            <Box height="100vh" overflow="auto">
+              <Video controls={false} fit="cover" autoPlay loop>
+                <source
+                  key="video"
+                  src="/assets/postweb.mp4"
+                  type="video/mp4"
+                />
+              </Video>
+            </Box>
+            <Box fill justify="between">
+              <Navigation />
+              <Footer color="white" />
+            </Box>
+          </Stack>
+        ) : (
+          <>
+            <Navigation /> {children} <Footer />
+          </>
+        )}
+      </Grommet>
     )
   }
 }
