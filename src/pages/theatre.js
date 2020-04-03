@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { Anchor, Box, Text } from 'grommet'
 import Helmet from 'react-helmet'
 import Layout from '../components/layout'
+import favicon from '../images/favicon.ico'
 
 export default ({ location }) => {
   useEffect(() => {
@@ -22,7 +23,6 @@ export default ({ location }) => {
         // } else {
         //   setLoadingStatus(STATUSES.ERROR)
         // }
-        console.log(res)
       } catch (e) {
         console.log('error')
         // setLoadingStatus(STATUSES.ERROR)
@@ -33,7 +33,9 @@ export default ({ location }) => {
 
   return (
     <Layout location={location}>
-      <Helmet title="Contact" />
+      <Helmet title="Theatre">
+        <link rel="icon" href={favicon} />
+      </Helmet>
       <Box align="center" justify="center">
         <Box>
           <Text>hey</Text>

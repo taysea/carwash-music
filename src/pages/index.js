@@ -1,16 +1,18 @@
 import React from 'react'
-import get from 'lodash/get'
 import Helmet from 'react-helmet'
 import Layout from '../components/layout'
 import { Box, Button, Text } from 'grommet'
 import { PlayFill } from 'grommet-icons'
+import favicon from '../images/favicon.ico'
 
 const RootIndex = () => {
   // const siteTitle = get(this, 'props.data.site.siteMetadata.title')
   // const [hover, setHover] = React.useState(false)
   return (
     <Layout location={'/'} isLanding>
-      <Helmet title="Postcard Boy" />
+      <Helmet title="Postcard Boy">
+        <link rel="icon" href={favicon} />
+      </Helmet>
       <Box align="center" justify="center" flex>
         <Button
           href="https://fanlink.to/postcardboy"

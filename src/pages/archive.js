@@ -6,12 +6,15 @@ import Layout from '../components/layout'
 // import Gallery from 'react-photo-gallery'
 import { Gallery } from '../components'
 import { Box } from 'grommet'
+import favicon from '../images/favicon.ico'
 
 export default ({ location, data }) => {
   const siteTitle = get(this, 'props.data.site.siteMetadata.title')
   return (
     <Layout location={location}>
-      <Helmet title={siteTitle} />
+      <Helmet title="Archive | Postcard Boy">
+        <link rel="icon" href={favicon} />
+      </Helmet>
       <Box pad={{ top: 'medium' }}>
         <Gallery
           images={data.allContentfulGalleryPhoto.edges.map(({ node }) => ({

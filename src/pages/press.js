@@ -1,13 +1,16 @@
-import React, { useEffect } from 'react'
-import { Anchor, Box, Grid, ResponsiveContext, Text } from 'grommet'
+import React from 'react'
+import { Grid, ResponsiveContext } from 'grommet'
 import Helmet from 'react-helmet'
 import Layout from '../components/layout'
 import { Card } from '../components'
+import favicon from '../images/favicon.ico'
 
 export default ({ location, data: { allContentfulPress } }) => {
   return (
     <Layout location={location}>
-      <Helmet title="Press" />
+      <Helmet title="Press | Postcard Boy">
+        <link rel="icon" href={favicon} />
+      </Helmet>
       <ResponsiveContext.Consumer>
         {size => (
           <Grid
