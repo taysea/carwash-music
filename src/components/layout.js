@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'gatsby'
 import { Box, Grommet, Main, ResponsiveContext, Stack, Video } from 'grommet'
 import Navigation from './navigation'
 import { Footer } from './Footer'
@@ -40,20 +39,7 @@ class Template extends React.Component {
                 <Footer isLanding={isLanding} />
               </Box>
             </Stack>
-          )
-          // ) : (
-          //   <Box height={{ min: '100%' }}>
-          //     <Navigation />
-          //     <Main
-          //       overflow="visible"
-          //       pad={{ horizontal: size !== 'small' ? 'xlarge' : 'medium' }}
-          //     >
-          //       {children}
-          //     </Main>
-          //     <Footer isLanding={isLanding} />
-          //   </Box>
-          // )
-          }
+          )}
         </ResponsiveContext.Consumer>
       </Grommet>
     )

@@ -1,20 +1,11 @@
 import React from 'react'
-import styled from 'styled-components'
 import Img from 'gatsby-image'
-import { Link } from 'gatsby'
-import { Anchor, Box, Text } from 'grommet'
-
-const StyledGatsbyLink = styled(Link)`
-  font-family: Lato;
-  color: #3e5170;
-  font-weight: bold;
-  text-decoration: none;
-`
+import { Anchor, Box } from 'grommet'
 
 export const Card = ({ height, link, title, titleImage }) => {
   return (
     <Box gap="small" fill>
-      <Anchor href={link} target="_blank">
+      <Anchor href={link} target="_blank" rel="noopener noreferrer">
         <Box width="100%" height={height || '250px'}>
           <Img
             fluid={titleImage}
@@ -23,7 +14,12 @@ export const Card = ({ height, link, title, titleImage }) => {
           />
         </Box>
       </Anchor>
-      <Anchor href={link} label={title} />
+      <Anchor
+        href={link}
+        label={title}
+        target="_blank"
+        rel="noopener noreferrer"
+      />
     </Box>
   )
 }
