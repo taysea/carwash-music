@@ -20,13 +20,13 @@ class Template extends React.Component {
       <Grommet theme={customTheme} full style={{ height: 'auto' }}>
         <GlobalFonts />
         {isLanding ? (
-          <Stack>
-            <Box height="100vh" overflow="auto">
+          <Stack guidingChild="last">
+            <Box height="100vh">
               <Video controls={false} fit="cover" autoPlay loop>
                 <source key="video" src={LandingVideo} type="video/mp4" />
               </Video>
             </Box>
-            <Box fill justify="between">
+            <Box height={{ min: '100vh' }}>
               <Navigation />
               {children}
               <Footer isLanding={isLanding} />
@@ -34,10 +34,10 @@ class Template extends React.Component {
           </Stack>
         ) : (
           <Box height={{ min: '100vh' }}>
-            <Navigation />{' '}
-            <Box flex="grow" pad={{ horizontal: 'xlarge' }}>
+            <Navigation />
+            <Box as="main" flex="grow" pad={{ horizontal: 'xlarge' }}>
               {children}
-            </Box>{' '}
+            </Box>
             <Footer isLanding={isLanding} />
           </Box>
         )}
