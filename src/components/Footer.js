@@ -2,22 +2,32 @@ import React from 'react'
 import { Anchor, Footer as GrommetFooter } from 'grommet'
 import { Instagram, Youtube, Twitter } from 'grommet-icons'
 
-export const Footer = ({ color }) => {
+const footerLinks = [
+  {
+    icon: isLanding => <Instagram color={isLanding ? 'white' : 'blue!'} />,
+    href: 'https://www.instagram.com/postcardboy_/',
+  },
+  {
+    icon: isLanding => <Youtube color={isLanding ? 'white' : 'blue!'} />,
+    href: 'https://www.youtube.com/channel/UCMDcXlCCckEqMHtXs553cDQ',
+  },
+  {
+    icon: isLanding => <Twitter color={isLanding ? 'white' : 'blue!'} />,
+    href: 'https://twitter.com/postcardboi',
+  },
+]
+
+export const Footer = ({ isLanding }) => {
   return (
     <GrommetFooter justify="center">
-      <Anchor
-        href="#"
-        target="_blank"
-        icon={<Instagram color={color} />}
-        href="https://www.instagram.com/postcardboy_/"
-      />
-      <Anchor
-        href="#"
-        target="_blank"
-        icon={<Youtube color={color} />}
-        href="https://www.youtube.com/channel/UCMDcXlCCckEqMHtXs553cDQ"
-      />
-      <Anchor href="#" target="_blank" icon={<Twitter color={color} />} />
+      {footerLinks.map(link => (
+        <Anchor
+          href={link.href}
+          icon={link.icon(isLanding)}
+          target="_blank"
+          rel="noopener noreferrer"
+        />
+      ))}
     </GrommetFooter>
   )
 }

@@ -1,19 +1,32 @@
 import React from 'react'
-import { Anchor, Header } from 'grommet'
+import { Anchor, Header, Heading } from 'grommet'
+import styled from 'styled-components'
 import { Link } from 'gatsby'
-import styles from './navigation.module.css'
 
+const StyledGatsbyLink = styled(Link)`
+  font-family: Lato;
+  color: #3e5170;
+  font-weight: bold;
+  text-decoration: none;
+`
 export default () => (
-  <Header justify="center" gap="xlarge" pad="medium">
+  <Header
+    justify="center"
+    gap="xlarge"
+    pad={{ horizontal: 'medium', top: 'medium' }}
+  >
+    <StyledGatsbyLink to="/archive">archive</StyledGatsbyLink>
     <Anchor
-      label="music"
-      size="medium"
-      href="https://fanlink.to/postcardboy"
+      href="https://www.youtube.com/playlist?list=PLCVIa2sMYl9OYeQZNlvk8FmaqLtqVDYdj"
       target="_blank"
-    />
-    <Anchor label="archive" size="medium" href="archive" />
-    <Anchor label="postcard boy" size="large" href="/" />
-    <Anchor label="theatre" size="medium" />
-    <Anchor label="contact" size="medium" href="/contact" />
+      rel="noopener noreferrer"
+    >
+      theatre
+    </Anchor>
+    <StyledGatsbyLink to="/">
+      <Heading margin="none">postcard boy</Heading>
+    </StyledGatsbyLink>
+    <StyledGatsbyLink to="/press">press</StyledGatsbyLink>
+    <StyledGatsbyLink to="/contact">contact</StyledGatsbyLink>
   </Header>
 )

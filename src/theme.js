@@ -112,26 +112,7 @@ export const customTheme = deepMerge(grommet, {
       'graph-2': 'purple',
     },
     font: {
-      family: 'Metric',
-      face: `@font-face {
-            font-family: "Aileron";
-            src: url("/fonts/Aileron.woff") format('woff');
-          }
-          @font-face {
-            font-family: "Metric";
-            src: url("https://hpefonts.s3.amazonaws.com/web/MetricHPE-Web-Bold.woff") format('woff');
-            font-weight: 700;
-          }
-          @font-face {
-            font-family: "Metric"; 
-            src: url("https://hpefonts.s3.amazonaws.com/web/MetricHPE-Web-Semibold.woff") format('woff');
-            font-weight: 600;
-          }
-          @font-face {
-            font-family: "Metric";
-            src: url("https://hpefonts.s3.amazonaws.com/web/MetricHPE-Web-Light.woff") format('woff');
-            font-weight: 100;
-          }`,
+      family: 'Lato',
     },
     active: {
       background: 'active-background',

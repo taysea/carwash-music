@@ -7,11 +7,12 @@ export default ({ location }) => {
   return (
     <Layout location={location}>
       <Helmet title="Contact" />
-      <Box align="center" justify="center">
-        <Box>
-          <Text>management contact:</Text>
-          <Anchor label="mgmt@postcardboymusic.com" />
-        </Box>
+      <Box align="center" justify="center" flex="grow">
+        <Anchor
+          size="medium"
+          label="mgmt@postcardboymusic.com"
+          href="mailto:mgmt@postcardboymusic.com"
+        />
       </Box>
     </Layout>
   )

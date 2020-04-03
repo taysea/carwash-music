@@ -1,10 +1,10 @@
 {
-  "name": "gatsby-contentful-starter",
-  "description": "Starter Contentful Gatsby Blog",
+  "name": "postcardboy-site",
+  "description": "a website for Postcard Boy",
   "version": "1.0.0",
-  "author": "Stefan Judis <stefanjudis@gmail.com>",
+  "author": "Taylor Seamans",
   "bugs": {
-    "url": "https://github.com/contentful-userland/gatsby-contentful-starter/issues"
+    "url": "https://github.com/taysea/postcardboy-site/issues"
   },
   "dependencies": {
     "gatsby-image": "^2.0.38",
@@ -22,7 +22,8 @@
     "react-helmet": "^5.2.0",
     "react-masonry-component": "^6.2.1",
     "react-photo-gallery": "^8.0.0",
-    "sharp": "^0.22.0",
+    "rebass": "^4.0.7",
+    "sharp": "^0.25.2",
     "styled-components": "^4.4.1"
   },
   "devDependencies": {

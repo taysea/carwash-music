@@ -1,15 +1,42 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Anchor, Box, Text } from 'grommet'
 import Helmet from 'react-helmet'
 import Layout from '../components/layout'
 
 export default ({ location }) => {
+  useEffect(() => {
+    async function fetchPhotos() {
+      try {
+        // setLoadingStatus(STATUSES.LOADING)
+        const res = await fetch(
+          `https://developers.google.com/apis-explorer/#p/youtube/v3/youtube.playlistItems.list?
+          part=snippet,contentDetails,status
+          &playlistId=UUMDcXlCCckEqMHtXs553cDQ`
+        )
+        // const photos = await res.json()
+        // if (res.ok && photos.length > 0) {
+        //   setData(photos)
+        //   setLoadingStatus(STATUSES.SUCCESS)
+        // } else if (res.ok && photos.length === 0) {
+        //   setLoadingStatus(STATUSES.NONE)
+        // } else {
+        //   setLoadingStatus(STATUSES.ERROR)
+        // }
+        console.log(res)
+      } catch (e) {
+        console.log('error')
+        // setLoadingStatus(STATUSES.ERROR)
+      }
+    }
+    fetchPhotos()
+  }, [])
+
   return (
     <Layout location={location}>
       <Helmet title="Contact" />
       <Box align="center" justify="center">
         <Box>
-          <Text>management contact:</Text>
+          <Text>hey</Text>
           <Anchor label="mgmt@postcardboymusic.com" />
         </Box>
       </Box>
