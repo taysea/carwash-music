@@ -20,6 +20,7 @@ export const Gallery = ({ images, itemsPerRow: itemsPerRowByBreakpoints }) => {
     <Box>
       {images.map((image, i) => (
         <Box
+          key={image.id}
           width={rowAspectRatioSumsByBreakpoints.map(
             // Return a value for each breakpoint
             (rowAspectRatioSums, j) => {

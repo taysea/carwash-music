@@ -12,7 +12,7 @@ export default ({ location, data }) => {
   return (
     <Layout location={location}>
       <Helmet title={siteTitle} />
-      <Box pad={{ horizontal: 'xlarge', top: 'medium' }}>
+      <Box pad={{ top: 'medium' }}>
         <Gallery
           images={data.allContentfulGalleryPhoto.edges.map(({ node }) => ({
             id: node.image.id,

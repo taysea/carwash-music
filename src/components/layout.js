@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import { Box, Grommet, Stack, Video } from 'grommet'
+import { Box, Grommet, Main, ResponsiveContext, Stack, Video } from 'grommet'
 import Navigation from './navigation'
 import { Footer } from './Footer'
 import { customTheme } from '../theme'
@@ -17,30 +17,44 @@ class Template extends React.Component {
       rootPath = __PATH_PREFIX__ + `/`
     }
     return (
-      <Grommet theme={customTheme} full style={{ height: 'auto' }}>
+      <Grommet theme={customTheme} style={{ height: 'auto' }} full>
         <GlobalFonts />
-        {isLanding ? (
-          <Stack guidingChild="last">
-            <Box height="100vh">
-              <Video controls={false} fit="cover" autoPlay loop>
-                <source key="video" src={LandingVideo} type="video/mp4" />
-              </Video>
-            </Box>
-            <Box height={{ min: '100vh' }}>
-              <Navigation />
-              {children}
-              <Footer isLanding={isLanding} />
-            </Box>
-          </Stack>
-        ) : (
-          <Box height={{ min: '100vh' }}>
-            <Navigation />
-            <Box as="main" flex="grow" pad={{ horizontal: 'xlarge' }}>
-              {children}
-            </Box>
-            <Footer isLanding={isLanding} />
-          </Box>
-        )}
+        <ResponsiveContext.Consumer>
+          {size => (
+            <Stack guidingChild={isLanding && 'last'} fill>
+              {isLanding && (
+                <Box height="100vh">
+                  <Video controls={false} fit="cover" autoPlay loop muted>
+                    <source key="video" src={LandingVideo} type="video/mp4" />
+                  </Video>
+                </Box>
+              )}
+              <Box height={{ min: '100vh' }}>
+                <Navigation />
+                <Main
+                  overflow="visible"
+                  pad={{ horizontal: size !== 'small' ? 'xlarge' : 'medium' }}
+                >
+                  {children}
+                </Main>
+                <Footer isLanding={isLanding} />
+              </Box>
+            </Stack>
+          )
+          // ) : (
+          //   <Box height={{ min: '100%' }}>
+          //     <Navigation />
+          //     <Main
+          //       overflow="visible"
+          //       pad={{ horizontal: size !== 'small' ? 'xlarge' : 'medium' }}
+          //     >
+          //       {children}
+          //     </Main>
+          //     <Footer isLanding={isLanding} />
+          //   </Box>
+          // )
+          }
+        </ResponsiveContext.Consumer>
       </Grommet>
     )
   }

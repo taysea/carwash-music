@@ -17,11 +17,12 @@ const footerLinks = [
   },
 ]
 
-export const Footer = ({ isLanding }) => {
+export const Footer = ({ justify, isLanding }) => {
   return (
-    <GrommetFooter justify="center">
+    <GrommetFooter justify={justify || 'center'}>
       {footerLinks.map(link => (
         <Anchor
+          key={link.href}
           href={link.href}
           icon={link.icon(isLanding)}
           target="_blank"

@@ -68,7 +68,10 @@ export default () => {
           </MobileNavLink>
           <Button icon={<Close />} onClick={() => setShowLayer(false)} />
         </Header>
-        <Box pad="medium" gap="large" flex>
+        <Box
+          pad={{ top: 'medium', horizontal: 'medium', bottom: 'xlarge' }}
+          gap="large"
+        >
           <MobileNavLink to="/archive">archive</MobileNavLink>
           <Anchor
             href="https://www.youtube.com/playlist?list=PLCVIa2sMYl9OYeQZNlvk8FmaqLtqVDYdj"
