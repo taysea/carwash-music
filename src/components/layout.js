@@ -6,6 +6,7 @@ import { customTheme } from '../theme'
 import LandingVideo from '../assets/postweb.mp4'
 import GlobalFonts from '../fonts/fonts'
 import './layout.css'
+import Div100vh from 'react-div-100vh'
 
 class Template extends React.Component {
   render() {
@@ -29,16 +30,18 @@ class Template extends React.Component {
                   </Video>
                 </Box>
               )}
-              <Box height={{ min: '100vh' }}>
-                <Navigation />
-                <Main
-                  overflow="visible"
-                  pad={{ horizontal: size !== 'small' ? 'xlarge' : 'medium' }}
-                >
-                  {children}
-                </Main>
-                <Footer isLanding={isLanding} />
-              </Box>
+              <Div100vh>
+                <Box fill>
+                  <Navigation />
+                  <Main
+                    flex
+                    pad={{ horizontal: size !== 'small' ? 'xlarge' : 'medium' }}
+                  >
+                    {children}
+                  </Main>
+                  <Footer isLanding={isLanding} />
+                </Box>
+              </Div100vh>
             </Stack>
           )}
         </ResponsiveContext.Consumer>
