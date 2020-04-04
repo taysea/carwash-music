@@ -24,11 +24,11 @@ class Template extends React.Component {
           {size => (
             <Stack guidingChild={isLanding && 'last'} fill>
               {isLanding && (
-                <Box height="100vh">
+                <Div100vh>
                   <Video controls={false} fit="cover" autoPlay loop muted>
                     <source key="video" src={LandingVideo} type="video/mp4" />
                   </Video>
-                </Box>
+                </Div100vh>
               )}
               <Div100vh>
                 <Box fill>
