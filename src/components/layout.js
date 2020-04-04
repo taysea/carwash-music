@@ -5,6 +5,7 @@ import { Footer } from './Footer'
 import { customTheme } from '../theme'
 import LandingVideo from '../assets/postweb.mp4'
 import GlobalFonts from '../fonts/fonts'
+import './layout.css'
 
 class Template extends React.Component {
   render() {
