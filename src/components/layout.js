@@ -40,10 +40,9 @@ class Template extends React.Component {
                 </Div100vh>
               )}
               <Div100vh>
-                <Box fill>
+                <Box height={{ min: '100vh' }}>
                   <Navigation />
                   <Main
-                    flex
                     pad={{ horizontal: size !== 'small' ? 'xlarge' : 'medium' }}
                   >
                     {children}
