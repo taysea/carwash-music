@@ -23,6 +23,9 @@ export const customTheme = deepMerge(grommet, {
   spacing: baseSpacing,
   // defaultMode: 'light',
   global: {
+    font: {
+      family: '"Lato", sans-serif',
+    },
     colors: {
       icon: 'text',
       brand: 'blue!',
