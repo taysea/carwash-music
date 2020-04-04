@@ -12,7 +12,7 @@ export default ({ location }) => {
       </Helmet>
       <Box align="center" justify="center" flex="grow">
         <Anchor
-          size="medium"
+          size="small"
           label="mgmt@postcardboymusic.com"
           href="mailto:mgmt@postcardboymusic.com"
         />

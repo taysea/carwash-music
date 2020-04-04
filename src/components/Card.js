@@ -1,6 +1,6 @@
 import React from 'react'
 import Img from 'gatsby-image'
-import { Anchor, Box } from 'grommet'
+import { Anchor, Box, Text } from 'grommet'
 
 export const Card = ({ height, link, title, titleImage }) => {
   return (
@@ -16,7 +16,7 @@ export const Card = ({ height, link, title, titleImage }) => {
       </Anchor>
       <Anchor
         href={link}
-        label={title}
+        label={<Text size="small">{title}</Text>}
         target="_blank"
         rel="noopener noreferrer"
       />
