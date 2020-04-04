@@ -20,14 +20,17 @@ const RootIndex = () => {
           rel="noopener noreferrer"
         >
           <Box
+            round="small"
             direction="row"
             align="center"
-            background="blue!"
+            border={{ color: 'blue!', size: 'medium' }}
             gap="medium"
             pad="medium"
           >
-            <PlayFill />
-            <Text weight="bold">listen now</Text>
+            <PlayFill color="blue!" />
+            <Text weight="bold" color="blue!">
+              listen now
+            </Text>
           </Box>
         </Button>
       </Box>
