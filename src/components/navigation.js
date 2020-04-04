@@ -24,6 +24,7 @@ const MobileNavLink = styled(Link)`
   font-weight: bold;
   text-decoration: none;
 `
+const AnchorBox = ({ ...rest }) => <Box pad={{ vertical: 'small' }} {...rest} />
 
 export default () => {
   const size = useContext(ResponsiveContext)
@@ -72,17 +73,23 @@ export default () => {
           pad={{ top: 'medium', horizontal: 'medium', bottom: 'xlarge' }}
           gap="large"
         >
-          <MobileNavLink to="/archive">archive</MobileNavLink>
+          <MobileNavLink to="/archive">
+            <AnchorBox>archive</AnchorBox>
+          </MobileNavLink>
           <Anchor
             href="https://www.youtube.com/playlist?list=PLCVIa2sMYl9OYeQZNlvk8FmaqLtqVDYdj"
             target="_blank"
             rel="noopener noreferrer"
             color="white"
           >
-            theatre
+            <AnchorBox>theatre</AnchorBox>
           </Anchor>
-          <MobileNavLink to="/press">press</MobileNavLink>
-          <MobileNavLink to="/contact">contact</MobileNavLink>
+          <MobileNavLink to="/press">
+            <AnchorBox>press</AnchorBox>
+          </MobileNavLink>
+          <MobileNavLink to="/contact">
+            <AnchorBox>contact</AnchorBox>
+          </MobileNavLink>
         </Box>
         <Footer isLanding />
       </Box>

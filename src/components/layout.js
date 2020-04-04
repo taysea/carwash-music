@@ -32,7 +32,7 @@ class Template extends React.Component {
                       autoPlay
                       loop
                       muted
-                      playsinline
+                      playsInline
                     >
                       <source key="video" src={LandingVideo} type="video/mp4" />
                     </Video>
