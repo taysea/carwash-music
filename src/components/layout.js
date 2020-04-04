@@ -4,7 +4,7 @@ import Navigation from './navigation'
 import { Footer } from './Footer'
 import { customTheme } from '../theme'
 import LandingVideo from '../assets/postweb-small.mp4'
-import GlobalFonts from '../fonts/fonts'
+import GlobalFonts from '../../static/fonts/fonts'
 import './layout.css'
 import Div100vh from 'react-div-100vh'
 

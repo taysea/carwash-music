@@ -1,10 +1,9 @@
 import { createGlobalStyle } from 'styled-components'
-import Lato from '../fonts/lato.woff'
-import LatoBlack from '../fonts/LatoBlack.woff'
+import LatoBlack from './LatoBlack.woff'
 
 export default createGlobalStyle`
     @font-face {
-        font-family: 'Lato';
+        font-family: "Lato";
         src: local('LatoBlack'),
         url(${LatoBlack}) format('woff');
         font-style: bold;

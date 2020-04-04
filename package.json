@@ -21,8 +21,6 @@
     "react-div-100vh": "^0.3.8",
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.0",
-    "react-masonry-component": "^6.2.1",
-    "react-photo-gallery": "^8.0.0",
     "rebass": "^4.0.7",
     "sharp": "^0.25.2",
     "styled-components": "^4.4.1"
@@ -41,16 +39,14 @@
     "rimraf": "^2.6.3",
     "yargs-parser": "^13.0.0"
   },
-  "homepage": "https://github.com/contentful-userland/gatsby-contentful-starter#readme",
+  "homepage": "https://github.com/taysea/postcardboy-site#readme",
   "keywords": [
     "gatsby",
     "contentful"
   ],
-  "license": "MIT",
-  "main": "n/a",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/contentful-userland/gatsby-contentful-starter.git"
+    "url": "git+https://github.com/taysea/postcardboy-site.git"
   },
   "scripts": {
     "dev": "npm run develop",
