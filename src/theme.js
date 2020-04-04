@@ -114,9 +114,6 @@ export const customTheme = deepMerge(grommet, {
       'graph-1': 'blue',
       'graph-2': 'purple',
     },
-    font: {
-      family: 'Lato',
-    },
     active: {
       background: 'active-background',
       color: 'active-text',
