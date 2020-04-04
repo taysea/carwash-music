@@ -3,14 +3,14 @@ import { Box, Grommet, Main, ResponsiveContext, Stack, Video } from 'grommet'
 import Navigation from './navigation'
 import { Footer } from './Footer'
 import { customTheme } from '../theme'
-import LandingVideo from '../assets/postweb.mp4'
+import LandingVideo from '../assets/postweb-small.mp4'
 import GlobalFonts from '../fonts/fonts'
 import './layout.css'
 import Div100vh from 'react-div-100vh'
 
 class Template extends React.Component {
   render() {
-    const { location, children, isLanding } = this.props
+    const { location, children, height, isLanding } = this.props
     let header
 
     let rootPath = `/`
@@ -39,10 +39,12 @@ class Template extends React.Component {
                   </Box>
                 </Div100vh>
               )}
-              <Div100vh>
-                <Box height={{ min: '100vh' }}>
+              <Div100vh style={height && { minHeight: '100rvh' }}>
+                <Box fill={!height}>
                   <Navigation />
                   <Main
+                    flex
+                    fill={false}
                     pad={{ horizontal: size !== 'small' ? 'xlarge' : 'medium' }}
                   >
                     {children}
