@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Img from 'gatsby-image'
-import { Anchor, Box, Text } from 'grommet'
+import { Anchor, Box, ResponsiveContext, Text } from 'grommet'
 
 export const Card = ({ height, link, title, titleImage }) => {
+  const size = useContext(ResponsiveContext)
   return (
     <Box gap="small" fill>
       <Anchor href={link} target="_blank" rel="noopener noreferrer">
@@ -16,7 +17,9 @@ export const Card = ({ height, link, title, titleImage }) => {
       </Anchor>
       <Anchor
         href={link}
-        label={<Text size="small">{title}</Text>}
+        label={
+          <Text size={size !== 'small' ? 'small' : 'xsmall'}>{title}</Text>
+        }
         target="_blank"
         rel="noopener noreferrer"
       />
