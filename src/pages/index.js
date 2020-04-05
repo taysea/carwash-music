@@ -6,8 +6,6 @@ import { PlayFill } from 'grommet-icons'
 import favicon from '../images/favicon.ico'
 
 const RootIndex = () => {
-  // const siteTitle = get(this, 'props.data.site.siteMetadata.title')
-  // const [hover, setHover] = React.useState(false)
   return (
     <Layout location={'/'} isLanding>
       <Helmet title="Postcard Boy">
