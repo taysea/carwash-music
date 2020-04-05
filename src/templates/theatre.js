@@ -17,11 +17,11 @@ export default ({ location, data }) => {
           <Box
             align="center"
             justify="center"
-            gap="medium"
+            gap={size !== 'small' ? 'medium' : 'xlarge'}
             margin={{ top: 'large' }}
           >
             {data.allContentfulTheatre.edges.map(({ node }) => (
-              <Box width="large" height={size !== 'small' ? 'medium' : '315px'}>
+              <Box width="large" height={size !== 'small' ? 'medium' : '250px'}>
                 <iframe
                   width="100%"
                   height="100%"
