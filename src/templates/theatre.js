@@ -21,7 +21,7 @@ export default ({ location, data }) => {
             margin={{ top: 'large' }}
           >
             {data.allContentfulTheatre.edges.map(({ node }) => (
-              <Box width="large" height={size !== 'small' ? 'medium' : '250px'}>
+              <Box width="large" height={size !== 'small' ? '450px' : '250px'}>
                 <iframe
                   width="100%"
                   height="100%"
