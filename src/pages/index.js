@@ -26,7 +26,7 @@ const RootIndex = () => {
             pad="medium"
           >
             <PlayFill color="blue!" />
-            <Text weight="bold" color="blue!">
+            <Text weight={900} color="blue!">
               listen now
             </Text>
           </Box>
