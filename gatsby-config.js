@@ -1,5 +1,5 @@
 require('dotenv').config({
-  path: `.env.${process.env.NODE_ENV}`,
+  path: `.env.${process.env.NODE_ENV || 'development'}`,
 })
 
 const contentfulConfig = {
@@ -31,6 +31,14 @@ module.exports = {
     {
       resolve: 'gatsby-source-contentful',
       options: contentfulConfig,
+    },
+    {
+      resolve: `gatsby-source-stripe`,
+      options: {
+        objects: ['Sku'],
+        secretKey: process.env.STRIPE_API_KEY,
+        downloadFiles: false,
+      },
     },
     {
       resolve: `gatsby-plugin-styled-components`,

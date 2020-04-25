@@ -31,7 +31,7 @@ const Template = ({ children, height, isLanding }) => (
             </Div100vh>
           )}
           <Div100vh style={height && { minHeight: '100rvh' }}>
-            <Box fill={!height}>
+            <Box fill={!height} width={{ max: 'xxlarge' }} margin="auto">
               <Navigation />
               <Main
                 flex

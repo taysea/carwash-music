@@ -66,9 +66,9 @@ export const customTheme = deepMerge(grommet, {
         dark: '#444444',
       },
       control: 'brand',
-      'active-background': 'background-contrast',
+      'active-background': '#EFEFEF',
       'active-text': 'text-strong',
-      'selected-background': 'brand',
+      'selected-background': 'active-background',
       'selected-text': 'text-strong',
       'status-critical': '#FF4040',
       'status-warning': '#FFAA15',
@@ -158,9 +158,26 @@ export const customTheme = deepMerge(grommet, {
     },
     weight: 700,
   },
+  formField: {
+    round: 'xsmall',
+    border: {
+      side: 'all',
+    },
+    label: {
+      size: 'xsmall',
+    },
+  },
   icon: {
     size: {
       xxlarge: '166px',
+    },
+  },
+  select: {
+    options: {
+      pad: 'none',
+      text: {
+        size: 'xsmall',
+      },
     },
   },
   text: {

@@ -1,10 +1,19 @@
-import React, { useContext, useState } from 'react'
-import { Box, Button, Header, Heading, Layer, ResponsiveContext } from 'grommet'
+import React, { useContext, useEffect, useState } from 'react'
+import {
+  Box,
+  Button,
+  Header,
+  Heading,
+  Layer,
+  ResponsiveContext,
+  Stack,
+} from 'grommet'
 import styled from 'styled-components'
 import { Link } from 'gatsby'
-import { Close, Menu } from 'grommet-icons'
+import { Cart, Close, Menu } from 'grommet-icons'
 import { Footer } from '.'
 import Div100vh from 'react-div-100vh'
+import { getCart } from '../utils'
 
 const StyledGatsbyLink = styled(Link)`
   font-family: Lato;
@@ -23,6 +32,7 @@ const AnchorBox = ({ ...rest }) => <Box pad={{ vertical: 'small' }} {...rest} />
 export default () => {
   const size = useContext(ResponsiveContext)
   const [showLayer, setShowLayer] = useState(false)
+  const cartItems = getCart()
 
   return size !== 'small' ? (
     <Header
@@ -32,12 +42,23 @@ export default () => {
     >
       <StyledGatsbyLink to="/archive">archive</StyledGatsbyLink>
       <StyledGatsbyLink to="/theatre">theatre</StyledGatsbyLink>
-
+      <StyledGatsbyLink to="/press">press</StyledGatsbyLink>
       <StyledGatsbyLink to="/">
         <Heading margin="none">postcard boy</Heading>
       </StyledGatsbyLink>
-      <StyledGatsbyLink to="/press">press</StyledGatsbyLink>
+
       <StyledGatsbyLink to="/contact">contact</StyledGatsbyLink>
+      <StyledGatsbyLink to="/merch">merch</StyledGatsbyLink>
+      <StyledGatsbyLink to="/cart">
+        <Stack anchor="top-right">
+          <Cart size="medium" color="blue!" />
+          {cartItems.length ? (
+            <Box background="orange" pad="xsmall" round />
+          ) : (
+            undefined
+          )}
+        </Stack>
+      </StyledGatsbyLink>
     </Header>
   ) : !showLayer ? (
     <Header pad="medium">
