@@ -6,7 +6,6 @@ import Layout from '../components/layout'
 import favicon from '../images/favicon.ico'
 
 export default ({ location, data }) => {
-  console.log(data)
   return (
     <Layout location={location} height>
       <Helmet title="Theatre">

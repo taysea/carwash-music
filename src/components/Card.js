@@ -18,7 +18,9 @@ export const Card = ({ height, link, title, titleImage }) => {
       <Anchor
         href={link}
         label={
-          <Text size={size !== 'small' ? 'small' : 'xsmall'}>{title}</Text>
+          <Text size={size !== 'small' ? 'small' : 'xsmall'} weight={900}>
+            {title}
+          </Text>
         }
         target="_blank"
         rel="noopener noreferrer"

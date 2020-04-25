@@ -5,12 +5,11 @@ import Navigation from './navigation'
 import { Footer } from './Footer'
 import { customTheme } from '../theme'
 import LandingVideo from '../assets/postweb-small.mp4'
-import GlobalFonts from '../fonts/fonts'
 import './layout.css'
+import 'typeface-lato'
 
 const Template = ({ children, height, isLanding }) => (
   <Grommet theme={customTheme} style={{ height: 'auto' }} full>
-    <GlobalFonts />
     <ResponsiveContext.Consumer>
       {size => (
         <Stack guidingChild={isLanding && 'last'} fill>

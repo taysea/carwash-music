@@ -1,5 +1,13 @@
 import React, { useContext, useState } from 'react'
-import { Box, Button, Header, Heading, Layer, ResponsiveContext } from 'grommet'
+import {
+  Box,
+  Button,
+  Header,
+  Heading,
+  Layer,
+  ResponsiveContext,
+  Text,
+} from 'grommet'
 import styled from 'styled-components'
 import { Link } from 'gatsby'
 import { Close, Menu } from 'grommet-icons'
@@ -7,15 +15,13 @@ import { Footer } from '.'
 import Div100vh from 'react-div-100vh'
 
 const StyledGatsbyLink = styled(Link)`
-  font-family: Lato;
   color: #3e5170;
-  font-weight: bold;
+  font-weight: 900;
   text-decoration: none;
 `
 const MobileNavLink = styled(Link)`
-  font-family: Lato;
   color: white;
-  font-weight: bold;
+  font-weight: 900;
   text-decoration: none;
 `
 const AnchorBox = ({ ...rest }) => <Box pad={{ vertical: 'small' }} {...rest} />
@@ -34,7 +40,9 @@ export default () => {
       <StyledGatsbyLink to="/theatre">theatre</StyledGatsbyLink>
 
       <StyledGatsbyLink to="/">
-        <Heading margin="none">postcard boy</Heading>
+        <Text margin="none" weight={900} size="2.5em">
+          postcard boy
+        </Text>
       </StyledGatsbyLink>
       <StyledGatsbyLink to="/press">press</StyledGatsbyLink>
       <StyledGatsbyLink to="/contact">contact</StyledGatsbyLink>
@@ -42,7 +50,9 @@ export default () => {
   ) : !showLayer ? (
     <Header pad="medium">
       <StyledGatsbyLink to="/">
-        <Heading margin="none">postcard boy</Heading>
+        <Text margin="none" weight={900} size="2em">
+          postcard boy
+        </Text>
       </StyledGatsbyLink>
       <Button
         icon={<Menu color="blue!" />}
@@ -54,9 +64,9 @@ export default () => {
       <Div100vh>
         <Box fill background="blue!">
           <Header pad="medium">
-            <MobileNavLink to="/">
-              <Heading margin="none">postcard boy</Heading>
-            </MobileNavLink>
+            <Text margin="none" weight={900} size="2em">
+              postcard boy
+            </Text>
             <Button icon={<Close />} onClick={() => setShowLayer(false)} />
           </Header>
           <Box

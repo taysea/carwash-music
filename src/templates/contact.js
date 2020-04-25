@@ -1,5 +1,5 @@
 import React from 'react'
-import { Anchor, Box, ResponsiveContext } from 'grommet'
+import { Anchor, Box, ResponsiveContext, Text } from 'grommet'
 import Helmet from 'react-helmet'
 import Layout from '../components/layout'
 import favicon from '../images/favicon.ico'
@@ -14,8 +14,11 @@ export default ({ location }) => {
         {size => (
           <Box align="center" justify="center" flex="grow">
             <Anchor
-              size={size !== 'small' ? 'small' : 'xsmall'}
-              label="mgmt@postcardboymusic.com"
+              label={
+                <Text weight={900} size={size !== 'small' ? 'small' : 'xsmall'}>
+                  mgmt@postcardboymusic.com
+                </Text>
+              }
               href="mailto:mgmt@postcardboymusic.com"
             />
           </Box>
