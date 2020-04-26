@@ -3,6 +3,7 @@ import { graphql } from 'gatsby'
 import Helmet from 'react-helmet'
 import Layout from '../components/layout'
 import { Box, Button, Grid, Image } from 'grommet'
+import { Button as MaterialButton, IconButton } from '@material-ui/core'
 import { FormSubtract, FormAdd } from 'grommet-icons'
 import favicon from '../images/favicon.ico'
 import { getCart, setCart } from '../utils'
@@ -102,20 +103,17 @@ export default ({ location, data }) => {
                 </StyledText>
               </Box>
               <Box direction="row" align="center" gap="xsmall">
-                <Box
-                  pad="xsmall"
-                  round="full"
+                <Box pad="xsmall" round="full"></Box>
+                <IconButton
                   onClick={() =>
                     removeFromStoredCart(cartItems[item.cartIndex])
                   }
                 >
                   <FormSubtract />
-                </Box>
+                </IconButton>
                 <StyledText>{item.quantity}</StyledText>
 
-                <Box
-                  pad="xsmall"
-                  round="full"
+                <IconButton
                   onClick={
                     item.quantity < 10
                       ? () => addToStoredCart(cartItems[item.cartIndex])
@@ -123,7 +121,7 @@ export default ({ location, data }) => {
                   }
                 >
                   <FormAdd color={item.quantity < 10 ? 'text' : '#CCC'} />
-                </Box>
+                </IconButton>
               </Box>
               <Button
                 onClick={() => deleteItemFromCart(cartItems[item.cartIndex])}

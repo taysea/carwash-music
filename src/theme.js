@@ -1,6 +1,7 @@
 import { grommet } from 'grommet'
 import { deepMerge } from 'grommet/utils'
 import { css } from 'styled-components'
+import { FormDown, FormUp } from 'grommet-icons'
 
 const baseSpacing = 24
 
@@ -165,6 +166,7 @@ export const customTheme = deepMerge(grommet, {
     },
     label: {
       size: 'xsmall',
+      margin: { horizontal: 'none' },
     },
   },
   icon: {
@@ -178,6 +180,10 @@ export const customTheme = deepMerge(grommet, {
       text: {
         size: 'xsmall',
       },
+    },
+    icons: {
+      down: FormDown,
+      up: FormUp,
     },
   },
   text: {

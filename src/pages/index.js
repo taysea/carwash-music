@@ -1,7 +1,8 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import Layout from '../components/layout'
-import { Box, Button, Text } from 'grommet'
+import { Box, Text } from 'grommet'
+import { Button as MaterialButton } from '@material-ui/core'
 import { PlayFill } from 'grommet-icons'
 import favicon from '../images/favicon.ico'
 
@@ -12,25 +13,26 @@ const RootIndex = () => {
         <link rel="icon" href={favicon} />
       </Helmet>
       <Box align="center" justify="center" flex>
-        <Button
+        <MaterialButton
+          variant="outlined"
+          startIcon={<PlayFill color="blue!" />}
           href="https://fanlink.to/postcardboy"
           target="_blank"
           rel="noopener noreferrer"
+          style={{
+            border: '3px solid #3e5170',
+            paddingLeft: '18px',
+            paddingRight: '18px',
+            paddingTop: '10px',
+            paddingBottom: '10px',
+            textTransform: 'lowercase',
+            borderRadius: '6px',
+          }}
         >
-          <Box
-            round="small"
-            direction="row"
-            align="center"
-            border={{ color: 'blue!', size: 'medium' }}
-            gap="medium"
-            pad="medium"
-          >
-            <PlayFill color="blue!" />
-            <Text weight={900} color="blue!">
-              listen now
-            </Text>
-          </Box>
-        </Button>
+          <Text weight={900} color="blue!">
+            listen now
+          </Text>
+        </MaterialButton>
       </Box>
     </Layout>
   )

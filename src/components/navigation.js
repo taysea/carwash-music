@@ -15,6 +15,7 @@ import { Cart, Close, Menu } from 'grommet-icons'
 import { Footer } from '.'
 import Div100vh from 'react-div-100vh'
 import { getCart } from '../utils'
+import { StyledText } from './StyledText'
 
 const StyledGatsbyLink = styled(Link)`
   color: #3e5170;
@@ -28,10 +29,18 @@ const MobileNavLink = styled(Link)`
 `
 const AnchorBox = ({ ...rest }) => <Box pad={{ vertical: 'small' }} {...rest} />
 
+const getCartQuantity = cart => {
+  let quantity = 0
+  cart.forEach(item => (quantity += item.quantity))
+
+  return quantity
+}
+
 export default () => {
   const size = useContext(ResponsiveContext)
   const [showLayer, setShowLayer] = useState(false)
   const cartItems = getCart()
+  const cartQuantity = getCartQuantity(cartItems)
 
   return size !== 'small' ? (
     <Header
@@ -52,9 +61,17 @@ export default () => {
       <StyledGatsbyLink to="/merch">merch</StyledGatsbyLink>
       <StyledGatsbyLink to="/cart">
         <Stack anchor="top-right">
-          <Cart size="medium" color="blue!" />
-          {cartItems.length ? (
-            <Box background="orange" pad="xsmall" round />
+          <Box pad="xsmall">
+            <Cart size="medium" color="blue!" />
+          </Box>
+          {cartQuantity > 0 ? (
+            <Box
+              background="blue!"
+              pad={{ horizontal: '8px', vertical: '4px' }}
+              round
+            >
+              <StyledText size="10px">{cartQuantity}</StyledText>
+            </Box>
           ) : (
             undefined
           )}

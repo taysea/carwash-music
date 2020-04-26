@@ -4,6 +4,7 @@ import { Image, FormField, Select, ResponsiveContext } from 'grommet'
 import Helmet from 'react-helmet'
 import Layout from '../components/layout'
 import { Box, Button, Grid, Text } from 'grommet'
+import { Button as MaterialButton } from '@material-ui/core'
 import favicon from '../images/favicon.ico'
 import { formatPrice, addToStoredCart } from '../utils'
 import { StyledText } from '../components'
@@ -14,7 +15,9 @@ const InfoSection = ({ children, name }) => (
       pad={{ vertical: 'small' }}
       border={{ side: 'bottom', color: 'light-5' }}
     >
-      <Text size="small">{name}</Text>
+      <Text size="small" weight="bold">
+        {name}
+      </Text>
     </Box>
     {children}
   </Box>
@@ -39,11 +42,6 @@ export default ({ location, data }) => {
     }
   }, [location])
 
-  useEffect(() => {
-    const timer = setTimeout(() => resetButton(), 500)
-    return () => clearTimeout(timer)
-  }, [disabled])
-
   const addToStoredCart = (newSku, quantity) => {
     let itemExisted = false
     let updatedCart = cart.map(item => {
@@ -66,10 +64,9 @@ export default ({ location, data }) => {
     setDisabled(false)
     setButtonText('Add to cart')
   }
+
   const addToCart = (event, skuId, quantity = 1) => {
     event.preventDefault()
-    setDisabled(true)
-    setButtonText('Added to cart!')
     addToStoredCart(skuId, quantity)
   }
 
@@ -105,38 +102,53 @@ export default ({ location, data }) => {
                 </Box>
                 <Box gap="small">
                   <Box gap="small">
-                    <Text size="small">
-                      {data.allStripeSku.edges[0].node.product.name}
-                    </Text>
-                    <StyledText size="small">
-                      {formatPrice(selectedSku.price, selectedSku.currency)}
-                    </StyledText>
-                    <Box direction="row" gap="xsmall">
-                      {data.allStripeSku.edges.map(({ node }) => (
-                        <Box
-                          key={node.id}
-                          background={
-                            selectedSku === node ? '#EFEFEF' : undefined
-                          }
-                          onClick={() => setSelectedSku(node)}
-                          hoverIndicator={selectedSku !== node}
-                          pad={{ horizontal: 'small', vertical: 'xsmall' }}
-                          round="xsmall"
-                        >
-                          {node.attributes.name}
-                        </Box>
-                      ))}
+                    <Box gap="xsmall">
+                      <StyledText size="small" weight="bold">
+                        {data.allStripeSku.edges[0].node.product.name}
+                      </StyledText>
+                      <StyledText size="small">
+                        {formatPrice(selectedSku.price, selectedSku.currency)}
+                      </StyledText>
+                    </Box>
+                    <Box gap="xsmall">
+                      <StyledText size="xsmall">Size*</StyledText>
+                      <Box direction="row" gap="xxsmall">
+                        {data.allStripeSku.edges.map(({ node }) => (
+                          <MaterialButton
+                            onClick={() => setSelectedSku(node)}
+                            variant={
+                              selectedSku === node ? 'contained' : 'outlined'
+                            }
+                            disableElevation
+                          >
+                            {node.attributes.name}
+                          </MaterialButton>
+                        ))}
+                      </Box>
                     </Box>
                     <Box width="xsmall">
                       <FormField label="Qty*">
                         <Select
                           options={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
+                          dropHeight="small"
                           value={quantity}
                           onChange={({ option }) => setQuantity(option)}
                         />
                       </FormField>
                     </Box>
-                    <Button
+                    <MaterialButton
+                      variant="contained"
+                      onClick={() => addToCart(event, selectedSku.id, quantity)}
+                      disableElevation
+                      style={{
+                        background: '#3e5170',
+                        color: '#FFF',
+                        textTransform: 'capitalize',
+                      }}
+                    >
+                      <StyledText size="small">{buttonText}</StyledText>
+                    </MaterialButton>
+                    {/* <Button
                       onClick={() => addToCart(event, selectedSku.id, quantity)}
                       disabled={disabled}
                       plain
@@ -149,7 +161,7 @@ export default ({ location, data }) => {
                       >
                         <StyledText size="small">{buttonText}</StyledText>
                       </Box>
-                    </Button>
+                    </Button> */}
                   </Box>
                   <InfoSection name="Details">
                     <StyledText size="xsmall">
