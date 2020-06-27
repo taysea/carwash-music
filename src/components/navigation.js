@@ -3,19 +3,19 @@ import {
   Box,
   Button,
   Header,
-  Heading,
   Layer,
   ResponsiveContext,
   Stack,
   Text,
 } from 'grommet'
+import reduce from 'lodash/reduce'
 import styled from 'styled-components'
 import { Link } from 'gatsby'
 import { Cart, Close, Menu } from 'grommet-icons'
 import { Footer } from '.'
 import Div100vh from 'react-div-100vh'
-import { getCart } from '../utils'
 import { StyledText } from './StyledText'
+import StoreContext from '../context/StoreContext'
 
 const StyledGatsbyLink = styled(Link)`
   color: #3e5170;
@@ -29,18 +29,19 @@ const MobileNavLink = styled(Link)`
 `
 const AnchorBox = ({ ...rest }) => <Box pad={{ vertical: 'small' }} {...rest} />
 
-const getCartQuantity = cart => {
-  let quantity = 0
-  cart.forEach(item => (quantity += item.quantity))
-
-  return quantity
+const useQuantity = () => {
+  const {
+    store: { checkout },
+  } = useContext(StoreContext)
+  const items = checkout ? checkout.lineItems : []
+  const total = reduce(items, (acc, item) => acc + item.quantity, 0)
+  return [total !== 0, total]
 }
 
 export default () => {
   const size = useContext(ResponsiveContext)
   const [showLayer, setShowLayer] = useState(false)
-  const cartItems = getCart()
-  const cartQuantity = getCartQuantity(cartItems)
+  const [hasItems, quantity] = useQuantity()
 
   return size !== 'small' ? (
     <Header
@@ -64,13 +65,13 @@ export default () => {
           <Box pad="xsmall">
             <Cart size="medium" color="blue!" />
           </Box>
-          {cartQuantity > 0 ? (
+          {hasItems ? (
             <Box
               background="blue!"
               pad={{ horizontal: '8px', vertical: '4px' }}
               round
             >
-              <StyledText size="10px">{cartQuantity}</StyledText>
+              <StyledText size="10px">{quantity}</StyledText>
             </Box>
           ) : (
             undefined
@@ -116,6 +117,12 @@ export default () => {
             </MobileNavLink>
             <MobileNavLink to="/contact">
               <AnchorBox>contact</AnchorBox>
+            </MobileNavLink>
+            <MobileNavLink to="/merch">
+              <AnchorBox>merch</AnchorBox>
+            </MobileNavLink>
+            <MobileNavLink to="/cart">
+              <AnchorBox>your cart</AnchorBox>
             </MobileNavLink>
           </Box>
           <Footer isLanding />

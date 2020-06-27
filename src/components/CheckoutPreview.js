@@ -1,55 +1,63 @@
-import React from 'react'
-import { Table, TableBody, TableRow, TableCell } from 'grommet'
+import React, { useContext } from 'react'
+import {
+  Box,
+  Table,
+  TableBody,
+  TableRow,
+  TableCell,
+  ResponsiveContext,
+} from 'grommet'
 import { StyledText } from '.'
-import { formatPrice } from '../utils'
 
-const calculateTotal = cart => {
-  let total = 0
-  const currency = cart[0].currency
-  cart.forEach(item => {
-    total += item.price * item.quantity
-  })
-
-  return formatPrice(total, currency)
-}
-
-export const CheckoutPreview = ({ cart }) => {
-  let total
-  if (cart.length) total = calculateTotal(cart)
-  else total = 'TBD'
+export const CheckoutPreview = ({ subtotal, taxes, total }) => {
+  const size = useContext(ResponsiveContext)
 
   return (
-    <Table>
-      <TableBody>
-        <TableRow>
-          <TableCell scope="row">
-            <StyledText size="xsmall">Subtotal</StyledText>
-          </TableCell>
-          <TableCell align="end">
-            <StyledText size="xsmall">{total}</StyledText>
-          </TableCell>
-        </TableRow>
-        <TableRow>
-          <TableCell scope="row">
-            <StyledText size="xsmall">Shipping</StyledText>
-          </TableCell>
-          <TableCell align="end">
-            <StyledText size="xsmall">TBD</StyledText>
-          </TableCell>
-        </TableRow>
-        <TableRow>
-          <TableCell scope="row">
-            <StyledText size="xsmall" weight="bold">
-              Total
-            </StyledText>
-          </TableCell>
-          <TableCell align="end">
-            <StyledText size="xsmall" weight="bold">
-              {total}
-            </StyledText>
-          </TableCell>
-        </TableRow>
-      </TableBody>
-    </Table>
+    <Box
+      gap="small"
+      width={
+        size !== 'small' ? (size !== 'medium' ? 'medium' : 'small') : '100%'
+      }
+    >
+      <Box pad="small" border={{ side: 'bottom', color: 'dark-3' }}>
+        <StyledText margin="none" size="small" weight="bold">
+          Order Summary
+        </StyledText>
+      </Box>
+      <>
+        <Table>
+          <TableBody>
+            <TableRow>
+              <TableCell scope="row">
+                <StyledText size="xsmall">Subtotal</StyledText>
+              </TableCell>
+              <TableCell align="end">
+                <StyledText size="xsmall">{subtotal}</StyledText>
+              </TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell scope="row">
+                <StyledText size="xsmall">Taxes</StyledText>
+              </TableCell>
+              <TableCell align="end">
+                <StyledText size="xsmall">{taxes}</StyledText>
+              </TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell scope="row">
+                <StyledText size="xsmall" weight="bold">
+                  Total
+                </StyledText>
+              </TableCell>
+              <TableCell align="end">
+                <StyledText size="xsmall" weight="bold">
+                  {total}
+                </StyledText>
+              </TableCell>
+            </TableRow>
+          </TableBody>
+        </Table>
+      </>
+    </Box>
   )
 }
