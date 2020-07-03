@@ -54,7 +54,7 @@ export default () => {
           postcard boy
         </Text>
       </StyledGatsbyLink>
-      <Box direction="row" gap="large" align="center">
+      <Box direction="row" gap="medium" align="center">
         <StyledGatsbyLink to="/archive">archive</StyledGatsbyLink>
         <StyledGatsbyLink to="/theatre">theatre</StyledGatsbyLink>
         {/* <StyledGatsbyLink to="/press">press</StyledGatsbyLink> */}

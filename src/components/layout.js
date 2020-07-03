@@ -5,6 +5,7 @@ import Navigation from './navigation'
 import { Footer } from './Footer'
 import { customTheme } from '../theme'
 import LandingVideo from '../assets/postweb-small.mp4'
+import LandingPhoto from '../assets/punch-32.jpg'
 import GlobalFonts from '../fonts/fonts'
 import './layout.css'
 import 'typeface-lato'
@@ -16,8 +17,8 @@ const Template = ({ children, height, isLanding }) => (
       <GlobalFonts />
       <ResponsiveContext.Consumer>
         {size => (
-          <Stack guidingChild={isLanding && 'last'} fill>
-            {isLanding && (
+          <Stack guidingChild={isLanding && size !== 'small' && 'last'} fill>
+            {isLanding && size !== 'small' && (
               <Div100vh>
                 <Box fill>
                   <Video
@@ -34,7 +35,18 @@ const Template = ({ children, height, isLanding }) => (
               </Div100vh>
             )}
             <Div100vh style={height && { minHeight: '100rvh' }}>
-              <Box fill={!height} width={{ max: 'xxlarge' }} margin="auto">
+              <Box
+                background={
+                  isLanding &&
+                  size === 'small' && {
+                    image: `url(${LandingPhoto})`,
+                    position: 'left',
+                  }
+                }
+                fill={!height}
+                width={{ max: 'xxlarge' }}
+                margin="auto"
+              >
                 <Navigation />
                 <Main
                   flex
