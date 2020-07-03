@@ -63,13 +63,18 @@ export default ({ location, data }) => {
                 </Box>
               )}
               <Box height={size !== 'small' ? '700px' : 'medium'}>
-                <Img fluid={selectedImage} alt={data.shopifyProduct.handle} />
+                <Img
+                  fluid={selectedImage}
+                  alt={data.shopifyProduct.handle}
+                  style={{ height: '100%' }}
+                />
               </Box>
               {size === 'small' && (
                 <Box gap="small" direction="row">
                   {data.shopifyProduct.images.map(image => (
                     <Box
                       height="xsmall"
+                      width="xsmall"
                       onClick={() =>
                         setSelectedImage(image.localFile.childImageSharp.fluid)
                       }

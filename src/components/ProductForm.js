@@ -116,6 +116,7 @@ const ProductForm = ({ product }) => {
               labelId="option-name-label"
               id="option-select"
               onChange={event => handleOptionChange(index, event)}
+              value={variant.title}
             >
               {values.map(value => (
                 <MenuItem
@@ -134,6 +135,7 @@ const ProductForm = ({ product }) => {
               labelId="quantity-label"
               id="merch-quantity"
               onChange={handleQuantityChange}
+              value={quantity}
             >
               {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(value => (
                 <MenuItem value={value} key={`quantity-${value}`}>
