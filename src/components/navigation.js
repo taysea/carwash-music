@@ -47,7 +47,7 @@ export default () => {
     <Header
       justify="between"
       gap="large"
-      pad={{ horizontal: 'medium', top: 'medium' }}
+      pad={{ horizontal: 'small', vertical: 'medium' }}
     >
       <StyledGatsbyLink to="/">
         <Text margin="none" weight={900} size="2.5em">

@@ -51,7 +51,7 @@ const Template = ({ children, height, isLanding }) => (
                 <Main
                   flex
                   fill={false}
-                  pad={{ horizontal: size !== 'small' ? 'xlarge' : 'medium' }}
+                  pad={{ horizontal: size !== 'small' ? undefined : 'medium' }}
                 >
                   {children}
                 </Main>
