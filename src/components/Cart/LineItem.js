@@ -32,7 +32,7 @@ export const LineItem = props => {
   }
 
   return (
-    <>
+    <Box gap="small">
       <Grid columns={['xsmall', 'small', 'auto', 'flex']} gap="medium">
         <Link to={`/merch/${item.variant.product.handle}/`}>
           <Box height="xsmall">{variantImage}</Box>
@@ -42,18 +42,36 @@ export const LineItem = props => {
             {item.title}
           </StyledText>
           <StyledText size="small">{selectedOptions}</StyledText>
+          {size === 'small' && (
+            <Box direction="row" align="center" gap="xsmall">
+              <StyledText size="xsmall">Qty: {item.quantity}</StyledText>
+            </Box>
+          )}
         </Box>
         {size !== 'small' && (
-          <Box direction="row" align="center" gap="xsmall">
-            <StyledText size="small">Qty: {item.quantity}</StyledText>
-          </Box>
+          <>
+            <Box direction="row" align="center" gap="xsmall">
+              <StyledText size="small">Qty: {item.quantity}</StyledText>
+            </Box>
+            <Box justify="center" align="start">
+              <Button
+                variant="outlined"
+                disableElevation
+                onClick={handleRemove}
+              >
+                Remove
+              </Button>
+            </Box>
+          </>
         )}
-        <Box justify="center" align="start">
+      </Grid>
+      {size === 'small' && (
+        <Box align="start">
           <Button variant="outlined" disableElevation onClick={handleRemove}>
             Remove
           </Button>
         </Box>
-      </Grid>
-    </>
+      )}
+    </Box>
   )
 }
