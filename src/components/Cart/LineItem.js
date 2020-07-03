@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import { Link } from 'gatsby'
-import { Grid, Box, Image, ResponsiveContext, Text } from 'grommet'
+import { Grid, Box, Image, ResponsiveContext } from 'grommet'
+import { Button } from '@material-ui/core'
 import { StyledText } from '..'
 import StoreContext from '../../context/StoreContext'
 
@@ -47,8 +48,10 @@ export const LineItem = props => {
             <StyledText size="small">Qty: {item.quantity}</StyledText>
           </Box>
         )}
-        <Box justify="center" align="end">
-          <button onClick={handleRemove}>Remove</button>
+        <Box justify="center" align="start">
+          <Button variant="outlined" disableElevation onClick={handleRemove}>
+            Remove
+          </Button>
         </Box>
       </Grid>
     </>

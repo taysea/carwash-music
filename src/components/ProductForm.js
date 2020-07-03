@@ -1,5 +1,7 @@
 import React, { useState, useContext, useEffect, useCallback } from 'react'
 import find from 'lodash/find'
+import { Button } from '@material-ui/core'
+import { Box } from 'grommet'
 import isEqual from 'lodash/isEqual'
 import PropTypes from 'prop-types'
 
@@ -18,6 +20,8 @@ const ProductForm = ({ product }) => {
     addVariantToCart,
     store: { client, adding },
   } = useContext(StoreContext)
+
+  const [added, setAdded] = useState(false)
 
   const productVariant =
     client.product.helpers.variantForOptions(product, variant) || variant
@@ -130,14 +134,26 @@ const ProductForm = ({ product }) => {
         value={quantity}
       />
       <br />
-      <button
-        type="submit"
-        disabled={!available || adding}
-        onClick={handleAddToCart}
-      >
-        Add to Cart
-      </button>
-      {!available && <p>This Product is out of Stock!</p>}
+      <Box gap="small">
+        <Button
+          type="submit"
+          variant="contained"
+          disableElevation
+          disabled={!available || adding}
+          onClick={() => {
+            handleAddToCart()
+            setAdded(true)
+          }}
+        >
+          Add to Cart
+        </Button>
+        {added && (
+          <Button href="/cart" variant="outlined">
+            Go to cart
+          </Button>
+        )}
+        {!available && <p>This Product is out of Stock!</p>}
+      </Box>
     </>
   )
 }

@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
-import { Box, Button, Text } from 'grommet'
+import { Box, Text } from 'grommet'
+import { Button } from '@material-ui/core'
 import StoreContext from '../../context/StoreContext'
 import { LineItem } from '.'
 import { CheckoutPreview } from '..'
@@ -19,7 +20,7 @@ const Cart = () => {
 
   return (
     <Box
-      pad={{ top: 'medium' }}
+      pad={{ top: 'medium', horizontal: 'small' }}
       direction="row-responsive"
       justify="between"
       gap="large"
@@ -39,10 +40,13 @@ const Cart = () => {
           total={checkout.totalPrice}
         />
         <Button
+          variant="contained"
+          disableElevation
           onClick={handleCheckout}
           disabled={checkout.lineItems.length === 0}
-          label="Checkout"
-        />
+        >
+          Checkout
+        </Button>
       </Box>
     </Box>
   )

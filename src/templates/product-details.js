@@ -35,7 +35,11 @@ export default ({ location, data }) => {
       </Helmet>
       <ResponsiveContext.Consumer>
         {size => (
-          <Box direction="row" gap="medium" pad={{ vertical: 'large' }}>
+          <Box
+            direction="row"
+            gap="medium"
+            pad={{ vertical: 'large', horizontal: 'small' }}
+          >
             <Grid
               columns={size !== 'small' ? ['xsmall', '1/2', 'auto'] : '100%'}
               fill
