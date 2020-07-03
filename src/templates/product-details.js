@@ -69,13 +69,15 @@ export default ({ location, data }) => {
                 <Box gap="small" direction="row">
                   {data.shopifyProduct.images.map(image => (
                     <Box
-                      width="xsmall"
                       height="xsmall"
                       onClick={() =>
                         setSelectedImage(image.localFile.childImageSharp.fluid)
                       }
                     >
-                      <Image src={image.localFile.url} fit="cover" />
+                      <Img
+                        fluid={image.localFile.childImageSharp.fluid}
+                        alt={data.shopifyProduct.handle}
+                      />
                     </Box>
                   ))}
                 </Box>

@@ -1,6 +1,12 @@
 import React, { useState, useContext, useEffect, useCallback } from 'react'
 import find from 'lodash/find'
-import { Button } from '@material-ui/core'
+import {
+  Button,
+  FormControl,
+  InputLabel,
+  Select,
+  MenuItem,
+} from '@material-ui/core'
 import { Box } from 'grommet'
 import isEqual from 'lodash/isEqual'
 import PropTypes from 'prop-types'
@@ -103,8 +109,40 @@ const ProductForm = ({ product }) => {
     <>
       <h3>{price}</h3>
       {options.map(({ id, name, values }, index) => (
-        <React.Fragment key={id}>
-          <label htmlFor={name}>{name} </label>
+        <Box key={id} gap="small">
+          <FormControl>
+            <InputLabel id="option-name-label">{name}</InputLabel>
+            <Select
+              labelId="option-name-label"
+              id="option-select"
+              onChange={event => handleOptionChange(index, event)}
+            >
+              {values.map(value => (
+                <MenuItem
+                  value={value}
+                  key={`${name}-${value}`}
+                  disabled={checkDisabled(name, value)}
+                >
+                  {value}
+                </MenuItem>
+              ))}
+            </Select>
+          </FormControl>
+          <FormControl>
+            <InputLabel id="quantity-label">Quantity</InputLabel>
+            <Select
+              labelId="quantity-label"
+              id="merch-quantity"
+              onChange={handleQuantityChange}
+            >
+              {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(value => (
+                <MenuItem value={value} key={`quantity-${value}`}>
+                  {value}
+                </MenuItem>
+              ))}
+            </Select>
+          </FormControl>
+          {/* <label htmlFor={name}>{name} </label>
           <select
             name={name}
             key={id}
@@ -119,11 +157,10 @@ const ProductForm = ({ product }) => {
                 {value}
               </option>
             ))}
-          </select>
-          <br />
-        </React.Fragment>
+          </select> */}
+        </Box>
       ))}
-      <label htmlFor="quantity">Quantity </label>
+      {/* <label htmlFor="quantity">Quantity </label>
       <input
         type="number"
         id="quantity"
@@ -132,7 +169,7 @@ const ProductForm = ({ product }) => {
         step="1"
         onChange={handleQuantityChange}
         value={quantity}
-      />
+      /> */}
       <br />
       <Box gap="small">
         <Button
