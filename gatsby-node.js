@@ -7,7 +7,7 @@ exports.createPages = ({ graphql, actions }) => {
   return new Promise((resolve, reject) => {
     const archivePost = path.resolve('./src/templates/archive.js')
     const contactPost = path.resolve('./src/templates/contact.js')
-    const pressPost = path.resolve('./src/templates/press.js')
+    // const pressPost = path.resolve('./src/templates/press.js')
     const theatrePost = path.resolve('./src/templates/theatre.js')
     const merchPost = path.resolve('./src/templates/merch.js')
     const cartTemplate = path.resolve('./src/templates/cart.js')
@@ -72,10 +72,10 @@ exports.createPages = ({ graphql, actions }) => {
           path: `/contact`,
           component: contactPost,
         })
-        createPage({
-          path: `/press`,
-          component: pressPost,
-        })
+        // createPage({
+        //   path: `/press`,
+        //   component: pressPost,
+        // })
         createPage({
           path: `/theatre`,
           component: theatrePost,

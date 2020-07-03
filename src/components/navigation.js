@@ -45,22 +45,24 @@ export default () => {
 
   return size !== 'small' ? (
     <Header
-      justify="center"
+      justify="between"
       gap="large"
       pad={{ horizontal: 'medium', top: 'medium' }}
     >
-      <StyledGatsbyLink to="/archive">archive</StyledGatsbyLink>
-      <StyledGatsbyLink to="/theatre">theatre</StyledGatsbyLink>
-      <StyledGatsbyLink to="/press">press</StyledGatsbyLink>
       <StyledGatsbyLink to="/">
         <Text margin="none" weight={900} size="2.5em">
           postcard boy
         </Text>
       </StyledGatsbyLink>
+      <Box direction="row" gap="large">
+        <StyledGatsbyLink to="/archive">archive</StyledGatsbyLink>
+        <StyledGatsbyLink to="/theatre">theatre</StyledGatsbyLink>
+        {/* <StyledGatsbyLink to="/press">press</StyledGatsbyLink> */}
 
-      <StyledGatsbyLink to="/contact">contact</StyledGatsbyLink>
-      <StyledGatsbyLink to="/merch">merch</StyledGatsbyLink>
-      <StyledGatsbyLink to="/cart">
+        <StyledGatsbyLink to="/contact">contact</StyledGatsbyLink>
+      </Box>
+      {/* <StyledGatsbyLink to="/merch">merch</StyledGatsbyLink> */}
+      {/* <StyledGatsbyLink to="/cart">
         <Stack anchor="top-right">
           <Box pad="xsmall">
             <Cart size="medium" color="blue!" />
@@ -77,7 +79,7 @@ export default () => {
             undefined
           )}
         </Stack>
-      </StyledGatsbyLink>
+      </StyledGatsbyLink> */}
     </Header>
   ) : !showLayer ? (
     <Header pad="medium">
@@ -112,18 +114,18 @@ export default () => {
             <MobileNavLink to="/theatre">
               <AnchorBox>theatre</AnchorBox>
             </MobileNavLink>
-            <MobileNavLink to="/press">
+            {/* <MobileNavLink to="/press">
               <AnchorBox>press</AnchorBox>
-            </MobileNavLink>
+            </MobileNavLink> */}
             <MobileNavLink to="/contact">
               <AnchorBox>contact</AnchorBox>
             </MobileNavLink>
-            <MobileNavLink to="/merch">
+            {/* <MobileNavLink to="/merch">
               <AnchorBox>merch</AnchorBox>
-            </MobileNavLink>
-            <MobileNavLink to="/cart">
+            </MobileNavLink> */}
+            {/* <MobileNavLink to="/cart">
               <AnchorBox>your cart</AnchorBox>
-            </MobileNavLink>
+            </MobileNavLink> */}
           </Box>
           <Footer isLanding />
         </Box>
