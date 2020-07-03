@@ -13,42 +13,6 @@ export default ({ location, data }) => {
         <link rel="icon" href={favicon} />
       </Helmet>
       <ProductGrid data={data} />
-      {/* <ResponsiveContext.Consumer>
-        {size => (
-          <Box pad={{ top: 'large' }}>
-            <Grid columns={size !== 'small' ? 'medium' : '100%'} gap="large">
-              {data.allShopifyProduct.edges.map(
-                ({ node }) =>
-                  node.availableForSale && (
-                    <Link
-                      to={`/merch/${node.handle}`}
-                      style={{ textDecoration: 'none' }}
-                    >
-                      <Box gap="small">
-                        <Box height="medium">
-                          <Img
-                            fluid={
-                              node.images[0].localFile.childImageSharp.fluid
-                            }
-                            alt={node.handle}
-                          />
-                        </Box>
-                        <Box>
-                          <Text size="small" weight="bold" color="black">
-                            {node.title}
-                          </Text>
-                          <Text size="small" color="black">
-                            {getPrice(node.variants[0].price)}
-                          </Text>
-                        </Box>
-                      </Box>
-                    </Link>
-                  )
-              )}
-            </Grid>
-          </Box>
-        )}
-      </ResponsiveContext.Consumer> */}
     </Layout>
   )
 }

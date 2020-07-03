@@ -19,7 +19,7 @@ export const ProductGrid = ({ data }) => {
   return (
     <ResponsiveContext.Consumer>
       {size => (
-        <Box pad={{ top: 'large' }}>
+        <Box pad={{ top: 'large', horizontal: 'small' }}>
           <Grid columns={size !== 'small' ? 'medium' : '100%'} gap="large">
             {data.allShopifyProduct.edges.map(
               ({ node }) =>
