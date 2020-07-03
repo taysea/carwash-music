@@ -54,32 +54,32 @@ export default () => {
           postcard boy
         </Text>
       </StyledGatsbyLink>
-      <Box direction="row" gap="large">
+      <Box direction="row" gap="large" align="center">
         <StyledGatsbyLink to="/archive">archive</StyledGatsbyLink>
         <StyledGatsbyLink to="/theatre">theatre</StyledGatsbyLink>
         {/* <StyledGatsbyLink to="/press">press</StyledGatsbyLink> */}
 
         <StyledGatsbyLink to="/contact">contact</StyledGatsbyLink>
-      </Box>
-      {/* <StyledGatsbyLink to="/merch">merch</StyledGatsbyLink> */}
-      {/* <StyledGatsbyLink to="/cart">
-        <Stack anchor="top-right">
-          <Box pad="xsmall">
-            <Cart size="medium" color="blue!" />
-          </Box>
-          {hasItems ? (
-            <Box
-              background="blue!"
-              pad={{ horizontal: '8px', vertical: '4px' }}
-              round
-            >
-              <StyledText size="10px">{quantity}</StyledText>
+        <StyledGatsbyLink to="/merch">merch</StyledGatsbyLink>
+        <StyledGatsbyLink to="/cart">
+          <Stack anchor="top-right">
+            <Box pad="xsmall">
+              <Cart size="medium" color="blue!" />
             </Box>
-          ) : (
-            undefined
-          )}
-        </Stack>
-      </StyledGatsbyLink> */}
+            {hasItems ? (
+              <Box
+                background="blue!"
+                pad={{ horizontal: '8px', vertical: '4px' }}
+                round
+              >
+                <StyledText size="10px">{quantity}</StyledText>
+              </Box>
+            ) : (
+              undefined
+            )}
+          </Stack>
+        </StyledGatsbyLink>
+      </Box>
     </Header>
   ) : !showLayer ? (
     <Header pad="medium">
@@ -120,12 +120,12 @@ export default () => {
             <MobileNavLink to="/contact">
               <AnchorBox>contact</AnchorBox>
             </MobileNavLink>
-            {/* <MobileNavLink to="/merch">
+            <MobileNavLink to="/merch">
               <AnchorBox>merch</AnchorBox>
-            </MobileNavLink> */}
-            {/* <MobileNavLink to="/cart">
+            </MobileNavLink>
+            <MobileNavLink to="/cart">
               <AnchorBox>your cart</AnchorBox>
-            </MobileNavLink> */}
+            </MobileNavLink>
           </Box>
           <Footer isLanding />
         </Box>
