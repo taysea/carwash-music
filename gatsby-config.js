@@ -38,5 +38,14 @@ module.exports = {
         // Add any options here
       },
     },
+    {
+      resolve: `gatsby-source-shopify`,
+      options: {
+        // The domain name of your Shopify shop.
+        shopName: process.env.SHOP_NAME,
+        // The storefront access token
+        accessToken: process.env.SHOPIFY_ACCESS_TOKEN,
+      },
+    },
   ],
 }

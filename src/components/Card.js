@@ -8,11 +8,7 @@ export const Card = ({ height, link, title, titleImage }) => {
     <Box gap="small" fill>
       <Anchor href={link} target="_blank" rel="noopener noreferrer">
         <Box width="100%" height={height || '250px'}>
-          <Img
-            fluid={titleImage}
-            //   alt={titleImage.description}
-            style={{ height: '100%' }}
-          />
+          <Img fluid={titleImage} style={{ height: '100%' }} />
         </Box>
       </Anchor>
       <Anchor

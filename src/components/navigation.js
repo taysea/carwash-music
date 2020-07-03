@@ -3,16 +3,19 @@ import {
   Box,
   Button,
   Header,
-  Heading,
   Layer,
   ResponsiveContext,
+  Stack,
   Text,
 } from 'grommet'
+import reduce from 'lodash/reduce'
 import styled from 'styled-components'
 import { Link } from 'gatsby'
-import { Close, Menu } from 'grommet-icons'
+import { Cart, Close, Menu } from 'grommet-icons'
 import { Footer } from '.'
 import Div100vh from 'react-div-100vh'
+import { StyledText } from './StyledText'
+import StoreContext from '../context/StoreContext'
 
 const StyledGatsbyLink = styled(Link)`
   color: #3e5170;
@@ -26,26 +29,57 @@ const MobileNavLink = styled(Link)`
 `
 const AnchorBox = ({ ...rest }) => <Box pad={{ vertical: 'small' }} {...rest} />
 
+const useQuantity = () => {
+  const {
+    store: { checkout },
+  } = useContext(StoreContext)
+  const items = checkout ? checkout.lineItems : []
+  const total = reduce(items, (acc, item) => acc + item.quantity, 0)
+  return [total !== 0, total]
+}
+
 export default () => {
   const size = useContext(ResponsiveContext)
   const [showLayer, setShowLayer] = useState(false)
+  const [hasItems, quantity] = useQuantity()
 
   return size !== 'small' ? (
     <Header
-      justify="center"
+      justify="between"
       gap="large"
-      pad={{ horizontal: 'medium', top: 'medium' }}
+      pad={{ horizontal: 'small', vertical: 'medium' }}
     >
-      <StyledGatsbyLink to="/archive">archive</StyledGatsbyLink>
-      <StyledGatsbyLink to="/theatre">theatre</StyledGatsbyLink>
-
       <StyledGatsbyLink to="/">
         <Text margin="none" weight={900} size="2.5em">
           postcard boy
         </Text>
       </StyledGatsbyLink>
-      <StyledGatsbyLink to="/press">press</StyledGatsbyLink>
-      <StyledGatsbyLink to="/contact">contact</StyledGatsbyLink>
+      <Box direction="row" gap="medium" align="center">
+        <StyledGatsbyLink to="/archive">archive</StyledGatsbyLink>
+        <StyledGatsbyLink to="/theatre">theatre</StyledGatsbyLink>
+        {/* <StyledGatsbyLink to="/press">press</StyledGatsbyLink> */}
+
+        <StyledGatsbyLink to="/contact">contact</StyledGatsbyLink>
+        <StyledGatsbyLink to="/merch">merch</StyledGatsbyLink>
+        <StyledGatsbyLink to="/cart">
+          <Stack anchor="top-right">
+            <Box pad="xsmall">
+              <Cart size="medium" color="blue!" />
+            </Box>
+            {hasItems ? (
+              <Box
+                background="blue!"
+                pad={{ horizontal: '8px', vertical: '4px' }}
+                round
+              >
+                <StyledText size="10px">{quantity}</StyledText>
+              </Box>
+            ) : (
+              undefined
+            )}
+          </Stack>
+        </StyledGatsbyLink>
+      </Box>
     </Header>
   ) : !showLayer ? (
     <Header pad="medium">
@@ -80,11 +114,17 @@ export default () => {
             <MobileNavLink to="/theatre">
               <AnchorBox>theatre</AnchorBox>
             </MobileNavLink>
-            <MobileNavLink to="/press">
+            {/* <MobileNavLink to="/press">
               <AnchorBox>press</AnchorBox>
-            </MobileNavLink>
+            </MobileNavLink> */}
             <MobileNavLink to="/contact">
               <AnchorBox>contact</AnchorBox>
+            </MobileNavLink>
+            <MobileNavLink to="/merch">
+              <AnchorBox>merch</AnchorBox>
+            </MobileNavLink>
+            <MobileNavLink to="/cart">
+              <AnchorBox>your cart</AnchorBox>
             </MobileNavLink>
           </Box>
           <Footer isLanding />
