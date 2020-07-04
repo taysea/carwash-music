@@ -17,7 +17,7 @@ export const Gallery = ({ images, itemsPerRow: itemsPerRowByBreakpoints }) => {
   )
 
   return (
-    <Box>
+    <Box onContextMenu={e => e.preventDefault()}>
       {images.map((image, i) => (
         <Box
           key={image.id}
@@ -34,7 +34,7 @@ export const Gallery = ({ images, itemsPerRow: itemsPerRowByBreakpoints }) => {
           css={{ display: 'inline-block' }}
           marginTop="-5px"
         >
-          <Img fluid={image} />
+          <Img fluid={image} draggable="false" />
         </Box>
       ))}
     </Box>
