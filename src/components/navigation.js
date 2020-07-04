@@ -59,8 +59,8 @@ export default () => {
         <StyledGatsbyLink to="/theatre">theatre</StyledGatsbyLink>
         {/* <StyledGatsbyLink to="/press">press</StyledGatsbyLink> */}
 
-        <StyledGatsbyLink to="/contact">contact</StyledGatsbyLink>
         <StyledGatsbyLink to="/merch">merch</StyledGatsbyLink>
+        <StyledGatsbyLink to="/contact">contact</StyledGatsbyLink>
         <StyledGatsbyLink to="/cart">
           <Stack anchor="top-right">
             <Box pad="xsmall">
@@ -117,11 +117,11 @@ export default () => {
             {/* <MobileNavLink to="/press">
               <AnchorBox>press</AnchorBox>
             </MobileNavLink> */}
-            <MobileNavLink to="/contact">
-              <AnchorBox>contact</AnchorBox>
-            </MobileNavLink>
             <MobileNavLink to="/merch">
               <AnchorBox>merch</AnchorBox>
+            </MobileNavLink>
+            <MobileNavLink to="/contact">
+              <AnchorBox>contact</AnchorBox>
             </MobileNavLink>
             <MobileNavLink to="/cart">
               <AnchorBox>cart</AnchorBox>
