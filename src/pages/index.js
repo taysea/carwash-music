@@ -16,7 +16,7 @@ const RootIndex = () => {
         <MaterialButton
           variant="outlined"
           startIcon={<PlayFill color="blue!" />}
-          href="https://fanlink.to/postcardboy"
+          href="https://fanlink.to/postcardboymusic"
           target="_blank"
           rel="noopener noreferrer"
           style={{
