@@ -124,7 +124,7 @@ export default () => {
               <AnchorBox>merch</AnchorBox>
             </MobileNavLink>
             <MobileNavLink to="/cart">
-              <AnchorBox>your cart</AnchorBox>
+              <AnchorBox>cart</AnchorBox>
             </MobileNavLink>
           </Box>
           <Footer isLanding />
