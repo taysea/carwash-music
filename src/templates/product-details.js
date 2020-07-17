@@ -114,7 +114,7 @@ export default ({ location, data }) => {
 
 export const pageQuery = graphql`
   query blogQuery($slug: String!) {
-    shopifyProduct(availableForSale: { eq: true }, handle: { eq: $slug }) {
+    shopifyProduct(handle: { eq: $slug }) {
       id
       title
       handle
