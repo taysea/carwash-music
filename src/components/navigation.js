@@ -59,9 +59,9 @@ export default () => {
         <StyledGatsbyLink to="/theatre">theatre</StyledGatsbyLink>
         {/* <StyledGatsbyLink to="/press">press</StyledGatsbyLink> */}
 
-        <StyledGatsbyLink to="/merch">merch</StyledGatsbyLink>
+        {/* <StyledGatsbyLink to="/merch">merch</StyledGatsbyLink> */}
         <StyledGatsbyLink to="/contact">contact</StyledGatsbyLink>
-        <StyledGatsbyLink to="/cart">
+        {/* <StyledGatsbyLink to="/cart">
           <Stack anchor="top-right">
             <Box pad="xsmall">
               <Cart size="medium" color="blue!" />
@@ -78,7 +78,7 @@ export default () => {
               undefined
             )}
           </Stack>
-        </StyledGatsbyLink>
+        </StyledGatsbyLink> */}
       </Box>
     </Header>
   ) : !showLayer ? (
@@ -117,15 +117,15 @@ export default () => {
             {/* <MobileNavLink to="/press">
               <AnchorBox>press</AnchorBox>
             </MobileNavLink> */}
-            <MobileNavLink to="/merch">
+            {/* <MobileNavLink to="/merch">
               <AnchorBox>merch</AnchorBox>
-            </MobileNavLink>
+            </MobileNavLink> */}
             <MobileNavLink to="/contact">
               <AnchorBox>contact</AnchorBox>
             </MobileNavLink>
-            <MobileNavLink to="/cart">
+            {/* <MobileNavLink to="/cart">
               <AnchorBox>cart</AnchorBox>
-            </MobileNavLink>
+            </MobileNavLink> */}
           </Box>
           <Footer isLanding />
         </Box>
