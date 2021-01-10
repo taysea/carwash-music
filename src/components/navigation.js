@@ -135,9 +135,6 @@ export default () => {
               <AnchorBox>music</AnchorBox>
             </StyledMobileLink>
             <MobileNavLink to="/archive">
-              <AnchorBox>music</AnchorBox>
-            </MobileNavLink>
-            <MobileNavLink to="/archive">
               <AnchorBox>archive</AnchorBox>
             </MobileNavLink>
             <MobileNavLink to="/theatre">
