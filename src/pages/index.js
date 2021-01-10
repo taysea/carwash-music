@@ -13,14 +13,14 @@ const RootIndex = () => {
         <link rel="icon" href={favicon} />
       </Helmet>
       <Box align="center" justify="center" flex>
-        <MaterialButton
+        {/* <MaterialButton
           variant="outlined"
-          startIcon={<PlayFill color="blue!" />}
+          startIcon={<PlayFill color="#000" />}
           href="https://fanlink.to/postcardboymusic"
           target="_blank"
           rel="noopener noreferrer"
           style={{
-            border: '3px solid #3e5170',
+            border: '3px solid #000',
             paddingLeft: '18px',
             paddingRight: '18px',
             paddingTop: '10px',
@@ -29,10 +29,10 @@ const RootIndex = () => {
             borderRadius: '6px',
           }}
         >
-          <Text weight={900} color="blue!">
+          <Text weight={900} color="#000">
             listen now
           </Text>
-        </MaterialButton>
+        </MaterialButton> */}
       </Box>
     </Layout>
   )

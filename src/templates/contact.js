@@ -15,7 +15,11 @@ export default ({ location }) => {
           <Box align="center" justify="center" flex="grow">
             <Anchor
               label={
-                <Text weight={900} size={size !== 'small' ? 'small' : 'xsmall'}>
+                <Text
+                  weight={900}
+                  size={size !== 'small' ? 'small' : 'xsmall'}
+                  color="#17355f"
+                >
                   mgmt@postcardboymusic.com
                 </Text>
               }

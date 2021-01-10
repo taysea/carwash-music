@@ -1,5 +1,6 @@
 import React, { useContext, useState } from 'react'
 import {
+  Anchor,
   Box,
   Button,
   Header,
@@ -18,10 +19,23 @@ import { StyledText } from './StyledText'
 import StoreContext from '../context/StoreContext'
 
 const StyledGatsbyLink = styled(Link)`
-  color: #3e5170;
+  color: #17355f;
   font-weight: 900;
   text-decoration: none;
 `
+
+const StyledLink = styled(Anchor)`
+  color: #17355f;
+  font-weight: 900;
+  text-decoration: none;
+`
+
+const StyledMobileLink = styled(Anchor)`
+  color: white;
+  font-weight: 900;
+  text-decoration: none;
+`
+
 const MobileNavLink = styled(Link)`
   color: white;
   font-weight: 900;
@@ -47,7 +61,7 @@ export default () => {
     <Header
       justify="between"
       gap="large"
-      pad={{ horizontal: 'small', vertical: 'medium' }}
+      pad={{ horizontal: 'large', vertical: 'large' }}
     >
       <StyledGatsbyLink to="/">
         <Text margin="none" weight={900} size="2.5em">
@@ -55,6 +69,9 @@ export default () => {
         </Text>
       </StyledGatsbyLink>
       <Box direction="row" gap="medium" align="center">
+        <StyledLink href="https://fanlink.to/postcardboymusic" target="_blank">
+          music
+        </StyledLink>
         <StyledGatsbyLink to="/archive">archive</StyledGatsbyLink>
         <StyledGatsbyLink to="/theatre">theatre</StyledGatsbyLink>
         {/* <StyledGatsbyLink to="/press">press</StyledGatsbyLink> */}
@@ -89,25 +106,37 @@ export default () => {
         </Text>
       </StyledGatsbyLink>
       <Button
-        icon={<Menu color="blue!" />}
+        icon={<Menu color="#17355f" />}
         onClick={() => setShowLayer(true)}
       />
     </Header>
   ) : (
     <Layer full animation>
       <Div100vh>
-        <Box fill background="blue!">
+        <Box fill background="#17355f">
           <Header pad="medium">
-            <Text margin="none" weight={900} size="2em">
+            <Text margin="none" weight={900} size="2em" color="white">
               postcard boy
             </Text>
-            <Button icon={<Close />} onClick={() => setShowLayer(false)} />
+            <Button
+              icon={<Close color="white" />}
+              onClick={() => setShowLayer(false)}
+            />
           </Header>
           <Box
             pad={{ top: 'medium', horizontal: 'medium', bottom: 'xlarge' }}
             gap="large"
             flex
           >
+            <StyledMobileLink
+              href="https://fanlink.to/postcardboymusic"
+              target="_blank"
+            >
+              <AnchorBox>music</AnchorBox>
+            </StyledMobileLink>
+            <MobileNavLink to="/archive">
+              <AnchorBox>music</AnchorBox>
+            </MobileNavLink>
             <MobileNavLink to="/archive">
               <AnchorBox>archive</AnchorBox>
             </MobileNavLink>

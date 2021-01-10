@@ -1,11 +1,11 @@
 import { createGlobalStyle } from 'styled-components'
-import Apercu from './apercu.woff'
+import Gotham from './GothamPro-Medium.woff'
 
 export default createGlobalStyle`
     @font-face {
-        font-family: 'Apercu';
-        src: local('Apercu'),
-        url(${Apercu}) format('woff');
+        font-family: 'Gotham';
+        src: local('Gotham'),
+        url(${Gotham}) format('woff');
         font-style: normal;
     }
 `

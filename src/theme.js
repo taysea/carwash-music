@@ -25,7 +25,7 @@ export const customTheme = deepMerge(grommet, {
   // defaultMode: 'light',
   global: {
     font: {
-      family: '"Lato", sans-serif',
+      family: '"Gotham", "Lato", sans-serif',
     },
     colors: {
       icon: 'text',

@@ -32,7 +32,7 @@ export const Gallery = ({ images, itemsPerRow: itemsPerRowByBreakpoints }) => {
             }
           )}
           css={{ display: 'inline-block' }}
-          marginTop="-5px"
+          marginTop="-10px"
         >
           <Img fluid={image} draggable="false" />
         </Box>

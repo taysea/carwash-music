@@ -4,7 +4,8 @@ import Div100vh from 'react-div-100vh'
 import Navigation from './navigation'
 import { Footer } from './Footer'
 import { customTheme } from '../theme'
-import LandingPhoto from '../assets/punch-32.jpg'
+import LandingPhoto from '../assets/still011.jpg'
+import MobilePhoto from '../assets/still015.jpg'
 import GlobalFonts from '../fonts/fonts'
 import './layout.css'
 import 'typeface-lato'
@@ -20,13 +21,16 @@ const Template = ({ children, height, isLanding }) => (
             <Box
               background={
                 isLanding && {
-                  image: `url(${LandingPhoto})`,
+                  image:
+                    size !== 'small'
+                      ? `url(${LandingPhoto})`
+                      : `url(${MobilePhoto})`,
                   position: size !== 'small' ? 'bottom' : 'left',
                 }
               }
               fill
             >
-              <Box width={{ max: 'xxlarge' }} margin="auto" fill>
+              <Box margin="auto" fill>
                 <Navigation />
                 <Main
                   flex
