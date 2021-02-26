@@ -146,7 +146,7 @@ export default () => {
             <MobileNavLink to="/contact">
               <AnchorBox>contact</AnchorBox>
             </MobileNavLink>
-            <Anchor href="https://www.instagram.com/from.garrett/">
+            <Anchor href="https://www.instagram.com/from.garrett/" color="#FFF">
               <AnchorBox>instagram</AnchorBox>
             </Anchor>
             <MobileNavLink to="/cart">

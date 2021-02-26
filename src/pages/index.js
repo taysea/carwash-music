@@ -3,7 +3,8 @@ import Helmet from 'react-helmet'
 import Layout from '../components/layout'
 import { Box, Image } from 'grommet'
 import favicon from '../images/favicon.ico'
-import CarwashGif from '../assets/carwash.gif'
+// import CarwashGif from '../assets/carwash.gif'
+import CarwashPhoto from '../assets/carwash.jpeg'
 
 const RootIndex = () => {
   return (
@@ -13,7 +14,7 @@ const RootIndex = () => {
       </Helmet>
       <Box align="center" justify="center" flex>
         <Box height="medium" width="medium">
-          <Image src={CarwashGif} fit="cover" alt="Carwash Music Album Art" />
+          <Image src={CarwashPhoto} fit="cover" alt="Carwash Music Album Art" />
         </Box>
       </Box>
     </Layout>
