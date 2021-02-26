@@ -9,7 +9,7 @@ import CarwashPhoto from '../assets/carwash.jpeg'
 const RootIndex = () => {
   return (
     <Layout location={'/'} isLanding>
-      <Helmet title="Postcard Boy">
+      <Helmet title="Carwash Music">
         <link rel="icon" href={favicon} />
       </Helmet>
       <Box align="center" justify="center" flex>

@@ -1,10 +1,10 @@
 {
-  "name": "postcardboy-site",
-  "description": "a website for Postcard Boy",
+  "name": "carwash-music",
+  "description": "a website for Carwash Music",
   "version": "1.0.0",
   "author": "Taylor Seamans",
   "bugs": {
-    "url": "https://github.com/taysea/postcardboy-site/issues"
+    "url": "https://github.com/taysea/carwash-music/issues"
   },
   "dependencies": {
     "@material-ui/core": "^4.9.11",

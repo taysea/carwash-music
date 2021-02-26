@@ -12,7 +12,7 @@ export default ({ location, data }) => {
   const siteTitle = get(this, 'props.data.site.siteMetadata.title')
   return (
     <Layout location={location} height>
-      <Helmet title="Archive | Postcard Boy">
+      <Helmet title="Archive | Carwash Music">
         <link rel="icon" href={favicon} />
       </Helmet>
       <Box pad={{ top: 'medium' }}>

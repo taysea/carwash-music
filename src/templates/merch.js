@@ -9,7 +9,7 @@ import { ProductGrid } from '../components'
 export default ({ location, data }) => {
   return (
     <Layout location={location} height>
-      <Helmet title="Shop | Postcard Boy">
+      <Helmet title="Shop | Carwash Music">
         <link rel="icon" href={favicon} />
       </Helmet>
       <ProductGrid data={data} />

@@ -8,7 +8,7 @@ import favicon from '../images/favicon.ico'
 export default ({ location, data: { allContentfulPress } }) => {
   return (
     <Layout location={location}>
-      <Helmet title="Press | Postcard Boy">
+      <Helmet title="Press | Carwash Music">
         <link rel="icon" href={favicon} />
       </Helmet>
       <ResponsiveContext.Consumer>

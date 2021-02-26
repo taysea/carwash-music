@@ -7,7 +7,7 @@ import favicon from '../images/favicon.ico'
 export default ({ location }) => {
   return (
     <Layout location={location}>
-      <Helmet title="Contact | Postcard Boy">
+      <Helmet title="Contact | Carwash Music">
         <link rel="icon" href={favicon} />
       </Helmet>
       <ResponsiveContext.Consumer>

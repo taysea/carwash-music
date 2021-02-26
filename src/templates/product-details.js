@@ -30,7 +30,7 @@ export default ({ location, data }) => {
 
   return (
     <Layout location={location} height>
-      <Helmet title={`${data.shopifyProduct.title} | Postcard Boy`}>
+      <Helmet title={`${data.shopifyProduct.title} | Carwash Music`}>
         <link rel="icon" href={favicon} />
       </Helmet>
       <ResponsiveContext.Consumer>

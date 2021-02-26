@@ -18,9 +18,9 @@ if (!spaceId || !accessToken) {
 
 module.exports = {
   siteMetadata: {
-    title: 'Postcard Boy',
+    title: 'Carwash Music',
     description:
-      'Postcard Boy is one of multiple creative projects for the nineteen year old San Diego native. He uses this outlet as a way to be more self-expressive in comparison to his photo and video work known under the name phylm.',
+      'Carswash Music is one of multiple creative projects for the nineteen year old San Diego native, Garrett Seamans. He also releases music under Postcard Boy and photo and video work known under the name phylm.',
   },
   pathPrefix: '/gatsby-contentful-starter',
   plugins: [
