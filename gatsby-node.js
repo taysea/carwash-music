@@ -9,11 +9,11 @@ exports.createPages = ({ graphql, actions }) => {
     const contactPost = path.resolve('./src/templates/contact.js')
     // const pressPost = path.resolve('./src/templates/press.js')
     const theatrePost = path.resolve('./src/templates/theatre.js')
-    // const merchPost = path.resolve('./src/templates/merch.js')
-    // const cartTemplate = path.resolve('./src/templates/cart.js')
-    // const productDetailsTemplate = path.resolve(
-    //   './src/templates/product-details.js'
-    // )
+    const merchPost = path.resolve('./src/templates/merch.js')
+    const cartTemplate = path.resolve('./src/templates/cart.js')
+    const productDetailsTemplate = path.resolve(
+      './src/templates/product-details.js'
+    )
     resolve(
       graphql(`
         {
@@ -53,16 +53,16 @@ exports.createPages = ({ graphql, actions }) => {
           reject(result.errors)
         }
 
-        // result.data.productQuery.edges.forEach(({ node }) => {
-        //   createPage({
-        //     path: `/merch/${node.handle}`,
-        //     component: productDetailsTemplate,
-        //     context: {
-        //       slug: node.handle,
-        //       productId: node.id,
-        //     },
-        //   })
-        // })
+        result.data.productQuery.edges.forEach(({ node }) => {
+          createPage({
+            path: `/merch/${node.handle}`,
+            component: productDetailsTemplate,
+            context: {
+              slug: node.handle,
+              productId: node.id,
+            },
+          })
+        })
 
         createPage({
           path: `/archive`,
@@ -80,14 +80,14 @@ exports.createPages = ({ graphql, actions }) => {
           path: `/theatre`,
           component: theatrePost,
         })
-        // createPage({
-        //   path: `/merch`,
-        //   component: merchPost,
-        // })
-        // createPage({
-        //   path: `/cart`,
-        //   component: cartTemplate,
-        // })
+        createPage({
+          path: `/merch`,
+          component: merchPost,
+        })
+        createPage({
+          path: `/cart`,
+          component: cartTemplate,
+        })
       })
     )
   })

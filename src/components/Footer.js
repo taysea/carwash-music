@@ -4,15 +4,15 @@ import { Instagram, Youtube, Twitter } from 'grommet-icons'
 
 const footerLinks = [
   {
-    icon: isLanding => <Instagram color={isLanding ? 'white' : '#17355f'} />,
+    icon: isLanding => <Instagram color="#17355f" />,
     href: 'https://www.instagram.com/postcardboy_/',
   },
   {
-    icon: isLanding => <Youtube color={isLanding ? 'white' : '#17355f'} />,
+    icon: isLanding => <Youtube color="#17355f" />,
     href: 'https://www.youtube.com/channel/UCMDcXlCCckEqMHtXs553cDQ',
   },
   {
-    icon: isLanding => <Twitter color={isLanding ? 'white' : '#17355f'} />,
+    icon: isLanding => <Twitter color="#17355f" />,
     href: 'https://twitter.com/postcardboi',
   },
 ]

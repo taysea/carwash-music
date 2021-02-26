@@ -6,6 +6,7 @@ import {
   TableRow,
   TableCell,
   ResponsiveContext,
+  Text,
 } from 'grommet'
 import { StyledText } from '.'
 
@@ -20,9 +21,9 @@ export const CheckoutPreview = ({ subtotal, taxes, total }) => {
       }
     >
       <Box pad="small" border={{ side: 'bottom', color: 'dark-3' }}>
-        <StyledText margin="none" size="small" weight="bold">
+        <Text margin="none" size="small" weight="bold">
           Order Summary
-        </StyledText>
+        </Text>
       </Box>
       <>
         <Table>

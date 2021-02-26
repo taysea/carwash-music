@@ -12,7 +12,7 @@ import {
 import reduce from 'lodash/reduce'
 import styled from 'styled-components'
 import { Link } from 'gatsby'
-import { Cart, Close, Menu } from 'grommet-icons'
+import { Cart, Close, Instagram, Menu } from 'grommet-icons'
 import { Footer } from '.'
 import Div100vh from 'react-div-100vh'
 import { StyledText } from './StyledText'
@@ -65,27 +65,30 @@ export default () => {
     >
       <StyledGatsbyLink to="/">
         <Text margin="none" weight={900} size="2.5em">
-          postcard boy
+          carwash music
         </Text>
       </StyledGatsbyLink>
       <Box direction="row" gap="medium" align="center">
         <StyledLink href="https://fanlink.to/postcardboymusic" target="_blank">
           music
         </StyledLink>
-        <StyledGatsbyLink to="/archive">archive</StyledGatsbyLink>
-        <StyledGatsbyLink to="/theatre">theatre</StyledGatsbyLink>
-        {/* <StyledGatsbyLink to="/press">press</StyledGatsbyLink> */}
-
-        {/* <StyledGatsbyLink to="/merch">merch</StyledGatsbyLink> */}
+        <StyledGatsbyLink to="/merch">merch</StyledGatsbyLink>
         <StyledGatsbyLink to="/contact">contact</StyledGatsbyLink>
-        {/* <StyledGatsbyLink to="/cart">
+        <Anchor href="https://www.instagram.com/from.garrett/">
           <Stack anchor="top-right">
             <Box pad="xsmall">
-              <Cart size="medium" color="blue!" />
+              <Instagram size="medium" color="#17355f" />
+            </Box>
+          </Stack>
+        </Anchor>
+        <StyledGatsbyLink to="/cart">
+          <Stack anchor="top-right">
+            <Box pad="xsmall">
+              <Cart size="medium" color="#17355f" />
             </Box>
             {hasItems ? (
               <Box
-                background="blue!"
+                background="#17355f"
                 pad={{ horizontal: '8px', vertical: '4px' }}
                 round
               >
@@ -95,14 +98,14 @@ export default () => {
               undefined
             )}
           </Stack>
-        </StyledGatsbyLink> */}
+        </StyledGatsbyLink>
       </Box>
     </Header>
   ) : !showLayer ? (
     <Header pad="medium">
       <StyledGatsbyLink to="/">
         <Text margin="none" weight={900} size="2em">
-          postcard boy
+          carswash music
         </Text>
       </StyledGatsbyLink>
       <Button
@@ -116,7 +119,7 @@ export default () => {
         <Box fill background="#17355f">
           <Header pad="medium">
             <Text margin="none" weight={900} size="2em" color="white">
-              postcard boy
+              carwash music
             </Text>
             <Button
               icon={<Close color="white" />}
@@ -134,24 +137,21 @@ export default () => {
             >
               <AnchorBox>music</AnchorBox>
             </StyledMobileLink>
-            <MobileNavLink to="/archive">
-              <AnchorBox>archive</AnchorBox>
-            </MobileNavLink>
-            <MobileNavLink to="/theatre">
-              <AnchorBox>theatre</AnchorBox>
-            </MobileNavLink>
             {/* <MobileNavLink to="/press">
               <AnchorBox>press</AnchorBox>
             </MobileNavLink> */}
-            {/* <MobileNavLink to="/merch">
+            <MobileNavLink to="/merch">
               <AnchorBox>merch</AnchorBox>
-            </MobileNavLink> */}
+            </MobileNavLink>
             <MobileNavLink to="/contact">
               <AnchorBox>contact</AnchorBox>
             </MobileNavLink>
-            {/* <MobileNavLink to="/cart">
+            <Anchor href="https://www.instagram.com/from.garrett/">
+              <AnchorBox>instagram</AnchorBox>
+            </Anchor>
+            <MobileNavLink to="/cart">
               <AnchorBox>cart</AnchorBox>
-            </MobileNavLink> */}
+            </MobileNavLink>
           </Box>
           <Footer isLanding />
         </Box>
