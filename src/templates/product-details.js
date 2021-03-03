@@ -58,6 +58,7 @@ export default ({ location, data }) => {
                       <Img
                         fluid={image.localFile.childImageSharp.fluid}
                         alt={data.shopifyProduct.handle}
+                        style={{ height: '100%' }}
                       />
                     </Box>
                   ))}
@@ -92,7 +93,7 @@ export default ({ location, data }) => {
                 <Text weight="bold" size="large">
                   {data.shopifyProduct.title}
                 </Text>
-                {/* <ProductForm product={data.shopifyProduct} /> */}
+                <ProductForm product={data.shopifyProduct} />
                 <InfoSection name="Details">
                   <StyledText size="xsmall">
                     {data.shopifyProduct.description}
