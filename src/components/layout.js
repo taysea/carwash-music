@@ -19,12 +19,14 @@ const Template = ({ children, height, isLanding }) => (
     <ContextProvider>
       <GlobalFonts />
       <Div100vh style={height && { minHeight: '100rvh' }}>
-        <Box margin="auto">
-          <Navigation />
-          <Main flex fill={false} pad={{ horizontal: 'medium' }}>
-            {children}
-          </Main>
-          <Footer isLanding={isLanding} />
+        <Box fill>
+          <Box margin="auto" fill>
+            <Navigation />
+            <Main flex fill={false} pad={{ horizontal: 'medium' }}>
+              {children}
+            </Main>
+            <Footer isLanding={isLanding} />
+          </Box>
         </Box>
       </Div100vh>
     </ContextProvider>

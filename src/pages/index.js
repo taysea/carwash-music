@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import Img from 'gatsby-image'
 import { graphql } from 'gatsby'
-import { Image, ResponsiveContext } from 'grommet'
+import { ResponsiveContext } from 'grommet'
 import Helmet from 'react-helmet'
 import Layout from '../components/layout'
 import { Box, Grid, Text } from 'grommet'
@@ -28,7 +28,6 @@ const RootIndex = ({ location, data }) => {
     data.shopifyProduct.images[0].localFile.childImageSharp.fluid
   )
 
-  console.log(data.shopifyProduct)
   return (
     <Layout location={location} height>
       <Helmet title="Carwash">
