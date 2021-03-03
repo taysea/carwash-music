@@ -31,7 +31,7 @@ const RootIndex = ({ location, data }) => {
   console.log(data.shopifyProduct)
   return (
     <Layout location={location} height>
-      <Helmet title={`${data.shopifyProduct.title} | Carwash Music`}>
+      <Helmet title="Carwash">
         <link rel="icon" href={favicon} />
       </Helmet>
       <ResponsiveContext.Consumer>
