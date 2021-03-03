@@ -35,6 +35,7 @@ export const ProductGrid = ({ data }) => {
                     <Img
                       fluid={node.images[0].localFile.childImageSharp.fluid}
                       alt={node.handle}
+                      style={{ height: '100%' }}
                     />
                   </Box>
                   <Box>
