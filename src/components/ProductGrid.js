@@ -22,7 +22,6 @@ export const ProductGrid = ({ data }) => {
         <Box
           pad={{ top: 'large', horizontal: 'small' }}
           width={size !== 'small' ? 'medium' : '100%'}
-          alignSelf="center"
         >
           <Grid columns={size !== 'small' ? 'medium' : '100%'} gap="large">
             {data.allShopifyProduct.edges.map(({ node }) => (

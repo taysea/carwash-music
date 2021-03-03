@@ -8,12 +8,11 @@ import {
   Layer,
   ResponsiveContext,
   Stack,
-  Text,
 } from 'grommet'
 import reduce from 'lodash/reduce'
 import styled from 'styled-components'
 import { Link } from 'gatsby'
-import { Cart, Close, Instagram, Menu } from 'grommet-icons'
+import { Cart, Close, Menu } from 'grommet-icons'
 import { Footer } from '.'
 import Div100vh from 'react-div-100vh'
 import { StyledText } from './StyledText'

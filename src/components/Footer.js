@@ -1,6 +1,6 @@
 import React from 'react'
 import { Anchor, Footer as GrommetFooter } from 'grommet'
-import { Instagram, Youtube, Twitter } from 'grommet-icons'
+import { Instagram, Youtube } from 'grommet-icons'
 import { Substack } from '.'
 
 const footerLinks = [

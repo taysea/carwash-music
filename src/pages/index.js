@@ -30,7 +30,7 @@ const RootIndex = ({ location, data }) => {
 
   return (
     <Layout location={location} height>
-      <Helmet title="Carwash">
+      <Helmet title="carwash">
         <link rel="icon" href={favicon} />
       </Helmet>
       <ResponsiveContext.Consumer>
