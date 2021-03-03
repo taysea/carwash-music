@@ -23,13 +23,13 @@ const InfoSection = ({ children, name }) => (
   </Box>
 )
 
-const RootIndex = ({ location, data }) => {
+const RootIndex = ({ data }) => {
   const [selectedImage, setSelectedImage] = useState(
     data.shopifyProduct.images[0].localFile.childImageSharp.fluid
   )
 
   return (
-    <Layout location={location} height>
+    <Layout location={'/'} height>
       <Helmet title="carwash">
         <link rel="icon" href={favicon} />
       </Helmet>

@@ -65,7 +65,7 @@ export default () => {
       pad={{ horizontal: 'large', vertical: 'large' }}
     >
       <Link to="/">
-        <Box width="225px">
+        <Box width="225px" height="75px">
           <Image src={Logo} fit="contain" />
         </Box>
       </Link>
@@ -98,7 +98,7 @@ export default () => {
   ) : !showLayer ? (
     <Header pad="medium">
       <Link to="/">
-        <Box width="small">
+        <Box width="small" height="75px">
           <Image src={Logo} fit="contain" />
         </Box>
       </Link>
@@ -112,7 +112,7 @@ export default () => {
       <Div100vh>
         <Box fill background="#17355f">
           <Header pad="medium">
-            <Box width="small">
+            <Box width="small" height="75px">
               <Image src={Logo} fit="contain" />
             </Box>
             <Button

@@ -13,7 +13,7 @@ const Template = ({ children, height, isLanding }) => (
   <Grommet
     background="#F6F3EA"
     theme={customTheme}
-    style={{ height: 'auto' }}
+    style={{ height: 'auto', width: '100%' }}
     full
   >
     <ContextProvider>
