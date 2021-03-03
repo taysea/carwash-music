@@ -1,19 +1,20 @@
 import React from 'react'
 import { Anchor, Footer as GrommetFooter } from 'grommet'
 import { Instagram, Youtube, Twitter } from 'grommet-icons'
+import { Substack } from '.'
 
 const footerLinks = [
   {
     icon: isLanding => <Instagram color="#17355f" />,
-    href: 'https://www.instagram.com/postcardboy_/',
+    href: 'https://www.instagram.com/from.garrett/',
   },
   {
     icon: isLanding => <Youtube color="#17355f" />,
     href: 'https://www.youtube.com/channel/UCMDcXlCCckEqMHtXs553cDQ',
   },
   {
-    icon: isLanding => <Twitter color="#17355f" />,
-    href: 'https://twitter.com/postcardboi',
+    icon: isLanding => <Substack color="#17355f" />,
+    href: 'https://junkmailclub.substack.com/',
   },
 ]
 

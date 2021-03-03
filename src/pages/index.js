@@ -1,24 +1,58 @@
 import React from 'react'
+import Img from 'gatsby-image'
+import { Link, graphql } from 'gatsby'
 import Helmet from 'react-helmet'
 import Layout from '../components/layout'
-import { Box, Image } from 'grommet'
 import favicon from '../images/favicon.ico'
-// import CarwashGif from '../assets/carwash.gif'
-import CarwashPhoto from '../assets/carwash.jpeg'
+import { ProductGrid } from '../components'
 
-const RootIndex = () => {
+const RootIndex = ({ location, data }) => {
   return (
-    <Layout location={'/'} isLanding>
+    <Layout location={location}>
       <Helmet title="Carwash Music">
         <link rel="icon" href={favicon} />
       </Helmet>
-      <Box align="center" justify="center" flex>
-        <Box height="medium" width="medium">
-          <Image src={CarwashPhoto} fit="cover" alt="Carwash Music Album Art" />
-        </Box>
-      </Box>
+      <ProductGrid data={data} />
     </Layout>
   )
 }
+
+export const pageQuery = graphql`
+  query {
+    allShopifyProduct {
+      edges {
+        node {
+          id
+          availableForSale
+          description
+          handle
+          title
+          images {
+            localFile {
+              childImageSharp {
+                fluid(maxWidth: 910) {
+                  ...GatsbyImageSharpFluid_withWebp_tracedSVG
+                }
+              }
+            }
+            originalSrc
+          }
+          priceRange {
+            minVariantPrice {
+              amount
+              currencyCode
+            }
+          }
+          variants {
+            id
+            title
+            availableForSale
+            price
+          }
+        }
+      }
+    }
+  }
+`
 
 export default RootIndex

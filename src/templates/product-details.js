@@ -28,6 +28,7 @@ export default ({ location, data }) => {
     data.shopifyProduct.images[0].localFile.childImageSharp.fluid
   )
 
+  console.log(data.shopifyProduct)
   return (
     <Layout location={location} height>
       <Helmet title={`${data.shopifyProduct.title} | Carwash Music`}>
@@ -91,7 +92,7 @@ export default ({ location, data }) => {
                 <Text weight="bold" size="large">
                   {data.shopifyProduct.title}
                 </Text>
-                <ProductForm product={data.shopifyProduct} />
+                {/* <ProductForm product={data.shopifyProduct} /> */}
                 <InfoSection name="Details">
                   <StyledText size="xsmall">
                     {data.shopifyProduct.description}

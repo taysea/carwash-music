@@ -4,6 +4,7 @@ import {
   Box,
   Button,
   Header,
+  Image,
   Layer,
   ResponsiveContext,
   Stack,
@@ -17,6 +18,7 @@ import { Footer } from '.'
 import Div100vh from 'react-div-100vh'
 import { StyledText } from './StyledText'
 import StoreContext from '../context/StoreContext'
+import Logo from '../assets/carwash-logo.png'
 
 const StyledGatsbyLink = styled(Link)`
   color: #17355f;
@@ -63,24 +65,17 @@ export default () => {
       gap="large"
       pad={{ horizontal: 'large', vertical: 'large' }}
     >
-      <StyledGatsbyLink to="/">
-        <Text margin="none" weight={900} size="2.5em">
-          carwash music
-        </Text>
-      </StyledGatsbyLink>
+      <Link to="/">
+        <Box width="225px">
+          <Image src={Logo} fit="contain" />
+        </Box>
+      </Link>
       <Box direction="row" gap="medium" align="center">
-        <StyledLink href="https://fanlink.to/postcardboymusic" target="_blank">
+        <StyledLink href="https://fanlink.to/carwash" target="_blank">
           music
         </StyledLink>
-        <StyledGatsbyLink to="/merch">merch</StyledGatsbyLink>
-        <StyledGatsbyLink to="/contact">contact</StyledGatsbyLink>
-        <Anchor href="https://www.instagram.com/from.garrett/">
-          <Stack anchor="top-right">
-            <Box pad="xsmall">
-              <Instagram size="medium" color="#17355f" />
-            </Box>
-          </Stack>
-        </Anchor>
+        {/* <StyledGatsbyLink to="/merch">merch</StyledGatsbyLink> */}
+        {/* <StyledGatsbyLink to="/contact">contact</StyledGatsbyLink> */}
         <StyledGatsbyLink to="/cart">
           <Stack anchor="top-right">
             <Box pad="xsmall">
@@ -103,11 +98,11 @@ export default () => {
     </Header>
   ) : !showLayer ? (
     <Header pad="medium">
-      <StyledGatsbyLink to="/">
-        <Text margin="none" weight={900} size="2em">
-          carswash music
-        </Text>
-      </StyledGatsbyLink>
+      <Link to="/">
+        <Box width="small">
+          <Image src={Logo} fit="contain" />
+        </Box>
+      </Link>
       <Button
         icon={<Menu color="#17355f" />}
         onClick={() => setShowLayer(true)}
@@ -118,9 +113,9 @@ export default () => {
       <Div100vh>
         <Box fill background="#17355f">
           <Header pad="medium">
-            <Text margin="none" weight={900} size="2em" color="white">
-              carwash music
-            </Text>
+            <Box width="small">
+              <Image src={Logo} fit="contain" />
+            </Box>
             <Button
               icon={<Close color="white" />}
               onClick={() => setShowLayer(false)}
@@ -131,24 +126,18 @@ export default () => {
             gap="large"
             flex
           >
-            <StyledMobileLink
-              href="https://fanlink.to/postcardboymusic"
-              target="_blank"
-            >
+            <StyledMobileLink href="https://fanlink.to/carwash" target="_blank">
               <AnchorBox>music</AnchorBox>
             </StyledMobileLink>
             {/* <MobileNavLink to="/press">
               <AnchorBox>press</AnchorBox>
             </MobileNavLink> */}
-            <MobileNavLink to="/merch">
+            {/* <MobileNavLink to="/merch">
               <AnchorBox>merch</AnchorBox>
-            </MobileNavLink>
-            <MobileNavLink to="/contact">
+            </MobileNavLink> */}
+            {/* <MobileNavLink to="/contact">
               <AnchorBox>contact</AnchorBox>
-            </MobileNavLink>
-            <Anchor href="https://www.instagram.com/from.garrett/" color="#FFF">
-              <AnchorBox>instagram</AnchorBox>
-            </Anchor>
+            </MobileNavLink> */}
             <MobileNavLink to="/cart">
               <AnchorBox>cart</AnchorBox>
             </MobileNavLink>

@@ -64,22 +64,22 @@ exports.createPages = ({ graphql, actions }) => {
           })
         })
 
-        createPage({
-          path: `/archive`,
-          component: archivePost,
-        })
-        createPage({
-          path: `/contact`,
-          component: contactPost,
-        })
+        // createPage({
+        //   path: `/archive`,
+        //   component: archivePost,
+        // })
+        // createPage({
+        //   path: `/contact`,
+        //   component: contactPost,
+        // })
         // createPage({
         //   path: `/press`,
         //   component: pressPost,
         // })
-        createPage({
-          path: `/theatre`,
-          component: theatrePost,
-        })
+        // createPage({
+        //   path: `/theatre`,
+        //   component: theatrePost,
+        // })
         createPage({
           path: `/merch`,
           component: merchPost,
